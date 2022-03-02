@@ -21,7 +21,7 @@ CREATE TABLE usuario (
   correo VARCHAR(50) NOT NULL UNIQUE,
   nombres VARCHAR(45) NOT NULL,
   apellidos VARCHAR(45) NOT NULL,
-  password_usuario VARCHAR(40) COLLATE utf8mb4_bin,
+  password_usuario VARCHAR(60) COLLATE utf8mb4_bin,
    PRIMARY KEY (usuario_id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
