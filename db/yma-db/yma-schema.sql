@@ -19,7 +19,8 @@ USE yma_database;
 CREATE TABLE usuario (
   usuario_id SMALLINT UNSIGNED NOT NULL AUTO_INCREMENT,
   correo VARCHAR(50) NOT NULL UNIQUE,
-  nombres VARCHAR(45) NOT NULL,
+  nombres VARCHAR(45) NOT NULL,  
+  identificacion VARCHAR(15) NOT NULL,
   apellidos VARCHAR(45) NOT NULL,
   password_usuario VARCHAR(60) COLLATE utf8mb4_bin,
    PRIMARY KEY (usuario_id)
