@@ -17,15 +17,33 @@ if (isset($_POST['login'])) {
         $stmt->bind_result($password_gotten); //bind_result retorna los resultados de usar SELECT y permite asignarle en ese retorno las variables que se desean usar
         if ($stmt->affected_rows) {
             $existe = $stmt->fetch();
-            if ($existe) {
+            if ($existe) {                
                 if (password_verify($password, $password_gotten)) {
-                    session_start();
-                    $_SESSION['usuario'] = $correo;
                     $stmt->close();
-                    $connection->close();
-                    header("Location: /index.php");
+                    $sql = "SELECT tramitador.usuario_id from tramitador,usuario WHERE (usuario.correo = '$correo' AND tramitador.usuario_id=usuario.usuario_id)";
+                    $result = $connection->query($sql);
+                    $id = $result->fetch_assoc();
+                    if ($id != null){
+                        session_start();
+                        $_SESSION['usuario'] = $correo;
+                        $connection->close();
+                        header("Location: /views/tramitadorMain.php");
+                    }else{
+                        $sql = "SELECT solicitante.usuario_id from solicitante,usuario WHERE (usuario.correo = '$correo' AND solicitante.usuario_id=usuario.usuario_id)";
+                        $result = $connection->query($sql);
+                        $id = $result->fetch_assoc();
+                        if ($id != null){
+                            session_start();
+                            $_SESSION['usuario'] = $correo;
+                            $connection->close();
+                            header("Location: /views/solicitanteMain.php");
+                        }else{
+                            echo 'xD';
+                        }
+                    }                    
+                    
                 } else {
-                    $stmt->close();
+                    
                     $connection->close();
                     header("Location: /views/login.php?mensaje=1");
                 }

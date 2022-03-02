@@ -37,7 +37,7 @@ if(isset($_GET['cerrar_sesion'])){
                 <form action="../settings/controller.php" id="login" method="post">
 
                     <div class="input-group mb-3">
-                        <input type="text" class="form-control" name="user" placeholder="Usuario">
+                        <input type="email" class="form-control" name="email" placeholder="Correo" required>
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas fa-envelope"></span>
@@ -46,7 +46,7 @@ if(isset($_GET['cerrar_sesion'])){
                     </div>
 
                     <div class="input-group mb-3">
-                        <input type="password" class="form-control" name="password" placeholder="Contraseña">
+                        <input type="password" class="form-control" name="password" placeholder="Contraseña" required>
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas fa-lock"></span>
@@ -83,25 +83,45 @@ if(isset($_GET['cerrar_sesion'])){
     if (isset($_GET['mensaje'])) {
         if($_GET['mensaje']==1){
     ?>
-    <script>
-        Swal.fire({
-            icon: 'error',
-            title: 'Oops...',
-            text: 'Datos inválidos!',
-        })
-    </script>
+            <script>
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Contraseña incorrecta!',
+                })
+            </script>
     <?php
-        }else{
+        }elseif($_GET['mensaje']==2){
     ?>
-    <script>
-        Swal.fire({
-            icon: 'error',
-            title: 'Oops...',
-            text: 'Permiso denegado!',
-        })
-    </script>
+            <script>
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Este correo no está registrado!',
+                })
+            </script>
     <?php
-        }
+        }elseif($_GET['mensaje']==4){
+            ?>
+                    <script>
+                        Swal.fire({
+                            icon: 'success',
+                            title: 'Registro exitoso',
+                            text: 'Inicia sesión!',
+                        })
+                    </script>
+            <?php
+                }else{
+    ?>        
+    <script>
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Datos no válidos!',
+                })
+            </script>
+    <?php      
+        }          
     }
     ?>
 </body>
