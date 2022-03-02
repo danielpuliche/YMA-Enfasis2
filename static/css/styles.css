@@ -84,7 +84,7 @@ body {
   line-height: var(--bs-body-line-height);
   color: var(--bs-body-color);
   text-align: var(--bs-body-text-align);
-  background-color: var(--bs-body-bg);
+  background: linear-gradient(315deg, #b6dee8, #2391a7);
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
@@ -11698,4 +11698,8 @@ body {
   width: 20px !important;
   font-size: 0.75rem;
   border-radius: 0.25rem !important;
+}
+
+div.login {
+  border-radius: 50px;
 }

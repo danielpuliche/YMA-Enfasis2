@@ -1,10 +1,10 @@
-    <footer class="main-footer">
-        <div class="float-left d-none d-xl-block">
-            <b>Version</b> 3.1.0 
-        </div>
-        <strong>Copyright &copy; 2014-2021 Hecho por Jhon Fredy</strong> All rights
-        reserved.
-    </footer>
+<footer class="main-footer">
+    <div class="float-left d-none d-xl-block">
+        <b>Version</b>1.0.0
+    </div>
+    <strong>&nbsp;Copyright &copy; 2022 Hecho por YMA-Team</strong> All rights
+    reserved.
+</footer>
 </div>
 <!-- ../wrapper -->
 
