@@ -1,0 +1,23 @@
+-- YMA Database Schema
+-- Version 1.0.0
+
+SET NAMES utf8mb4;
+SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
+SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
+SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL';
+
+DROP SCHEMA IF EXISTS yma_database;
+CREATE SCHEMA yma_database;
+USE yma_database;
+
+--
+-- Table structure for table `usuario`
+--
+
+CREATE TABLE usuario (
+  usuario_id SMALLINT UNSIGNED NOT NULL AUTO_INCREMENT,
+  correo VARCHAR(50) NOT NULL UNIQUE,
+  nombres VARCHAR(45) NOT NULL,
+  apellidos VARCHAR(45) NOT NULL,
+  PRIMARY KEY  (usuario_id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;

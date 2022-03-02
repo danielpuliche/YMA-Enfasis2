@@ -11,27 +11,30 @@ if(isset($_GET['cerrar_sesion'])){
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Admin ApliWeb</title>
+    <title>Inicio de sesión - YMA</title>
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Bootstrap 4 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <!-- Theme style -->
+
+    <link rel="stylesheet" href="../static/css/styles.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/admin-lte@3.2/dist/css/adminlte.min.css">
+    
 </head>
 
 <body class="hold-transition login-page">
     <div class="login-box">
         <div class="login-logo">
-            <a href="#"><b>Admin</b> ApliWeb</a>
+            <a href="#"><b>YMA</b><br>Your Medical Assistant</a>
         </div>
         <!-- /.login-logo -->
         <div class="card">
-            <div class="card-body login-card-body">
+            <div class="card-body login-card-body login">
                 <p class="login-box-msg">Iniciar Sesión</p>
 
-                <form action="./../settings/controller.php" id="login-admin" method="post">
+                <form action="../settings/controller.php" id="login" method="post">
 
                     <div class="input-group mb-3">
                         <input type="text" class="form-control" name="user" placeholder="Usuario">
@@ -52,7 +55,7 @@ if(isset($_GET['cerrar_sesion'])){
                     </div>
 
                     <div class="input-group mb-3">
-                        <input type="hidden" name="login-admin" value="1">
+                        <input type="hidden" name="login" value="1">
                         <button type="submit" class="btn btn-primary btn-block">Ingresar</button>
                     </div>
 

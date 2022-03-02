@@ -5,7 +5,7 @@ $connection = mysqli_connect($host, $user, $pw, $db);
 mysqli_set_charset($connection, "utf8");
 
 // Controlador para login
-if (isset($_POST['login-admin'])) {
+if (isset($_POST['login'])) {
 
     $usuario = $_POST['user'];
     $password = $_POST['password'];
