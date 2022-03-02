@@ -2,7 +2,7 @@
 $host = 'localhost';
 $user = 'root';
 $pw = '';
-$db = 'sakila';
+$db = 'yma_database';
 $connection = mysqli_connect($host, $user, $pw, $db);
 
 if($connection){
