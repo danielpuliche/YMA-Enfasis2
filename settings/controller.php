@@ -26,15 +26,17 @@ if (isset($_POST['login'])) {
                     if ($id != null) {
                         session_start();
                         $_SESSION['usuario'] = $correo;
+                        $_SESSION['usuario_id'] = $id["tramitador_id"];
                         $connection->close();
                         header("Location: /views/tramitador/tramitadorMain.php");
-                    } else {
+                    }else{
                         $sql = "SELECT solicitante.solicitante_id from solicitante,usuario WHERE (usuario.correo = '$correo' AND solicitante.solicitante_id=usuario.usuario_id)";
                         $result = $connection->query($sql);
                         $id = $result->fetch_assoc();
                         if ($id != null) {
                             session_start();
                             $_SESSION['usuario'] = $correo;
+                            $_SESSION['usuario_id'] = $id["solicitante_id"];
                             $connection->close();
                             header("Location: /views/solicitante/solicitanteMain.php");
                         } else {
@@ -132,16 +134,6 @@ if (isset($_POST['signup_solicitante'])) {
         }
     }
 }
-
-
-
-
-
-
-
-
-
-
 
 // Controlador para editar film
 if (isset($_POST['edit-film'])) {
