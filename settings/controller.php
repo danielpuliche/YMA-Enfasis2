@@ -20,28 +20,27 @@ if (isset($_POST['login'])) {
             if ($existe) {
                 if (password_verify($password, $password_gotten)) {
                     $stmt->close();
-                    $sql = "SELECT tramitador.usuario_id from tramitador,usuario WHERE (usuario.correo = '$correo' AND tramitador.usuario_id=usuario.usuario_id)";
+                    $sql = "SELECT tramitador.tramitador_id from tramitador,usuario WHERE (usuario.correo = '$correo' AND tramitador.tramitador_id=usuario.usuario_id)";
                     $result = $connection->query($sql);
                     $id = $result->fetch_assoc();
-                    if ($id != null){
+                    if ($id != null) {
                         session_start();
                         $_SESSION['usuario'] = $correo;
                         $connection->close();
                         header("Location: /views/tramitador/tramitadorMain.php");
-                    }else{
-                        $sql = "SELECT solicitante.usuario_id from solicitante,usuario WHERE (usuario.correo = '$correo' AND solicitante.usuario_id=usuario.usuario_id)";
+                    } else {
+                        $sql = "SELECT solicitante.solicitante_id from solicitante,usuario WHERE (usuario.correo = '$correo' AND solicitante.solicitante_id=usuario.usuario_id)";
                         $result = $connection->query($sql);
                         $id = $result->fetch_assoc();
-                        if ($id != null){
+                        if ($id != null) {
                             session_start();
                             $_SESSION['usuario'] = $correo;
                             $connection->close();
                             header("Location: /views/solicitante/solicitanteMain.php");
-                        }else{
+                        } else {
                             echo 'xD';
                         }
                     }
-
                 } else {
 
                     $connection->close();
@@ -73,14 +72,14 @@ if (isset($_POST['signup_tramitador'])) {
     $query = "INSERT INTO usuario(`correo`, `nombres`, `apellidos`, `identificacion`, `password_usuario`) VALUES ('$correo','$nombres','$apellidos','$identificacion','$password')";
     //Ejecuta la consulta
 
-    try{
+    try {
         $resultado = mysqli_query($connection, $query);
-    } catch(Exception){
+    } catch (Exception) {
     }
 
     if (!$resultado) {
         header("Location: /views/tramitador/registroTramitador.php?mensaje=2");
-    }else{
+    } else {
         $sql = "SELECT usuario.usuario_id from usuario WHERE usuario.correo = '$correo'";
         $result = $connection->query($sql);
         $id_tramitador = $result->fetch_assoc()['usuario_id'];
@@ -90,15 +89,14 @@ if (isset($_POST['signup_tramitador'])) {
         $resultado = mysqli_query($connection, $query);
         if (!$resultado) {
             header("Location: /views/tramitador/registroTramitador.php?mensaje=3");
-        }else{
+        } else {
             //Con este comando retorna al login
             header("Location: /views/login.php?mensaje=4");
         }
     }
-
 }
 
-// Controlador para crear tramitador
+// Controlador para crear solicitante
 if (isset($_POST['signup_solicitante'])) {
 
     $nombres = $_POST['names'];
@@ -111,14 +109,14 @@ if (isset($_POST['signup_solicitante'])) {
     $query = "INSERT INTO usuario(`correo`, `nombres`, `apellidos`, `identificacion`, `password_usuario`) VALUES ('$correo','$nombres','$apellidos','$identificacion','$password')";
     //Ejecuta la consulta
 
-    try{
+    try {
         $resultado = mysqli_query($connection, $query);
-    } catch(Exception){
+    } catch (Exception) {
     }
 
     if (!$resultado) {
         header("Location: /views/solicitante/registroSolicitante.php?mensaje=2");
-    }else{
+    } else {
         $sql = "SELECT usuario.usuario_id from usuario WHERE usuario.correo = '$correo'";
         $result = $connection->query($sql);
         $id_solicitante = $result->fetch_assoc()['usuario_id'];
@@ -128,12 +126,11 @@ if (isset($_POST['signup_solicitante'])) {
         $resultado = mysqli_query($connection, $query);
         if (!$resultado) {
             header("Location: /views/solicitante/registroSolicitante.php?mensaje=3");
-        }else{
+        } else {
             //Con este comando retorna al login
             header("Location: /views/login.php?mensaje=4");
         }
     }
-
 }
 
 
