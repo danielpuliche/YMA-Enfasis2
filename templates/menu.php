@@ -1,15 +1,30 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     
     <!-- Brand Logo -->
-    <a href="/index.php" class="brand-link">
+    <a href="#" class="brand-link">
         <img src="https://iconarchive.com/download/i109565/cjdowner/cryptocurrency-flat/ICON-ICX.ico" alt="Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-        <span class="brand-text font-weight-light">Solicitante</span>
+        
+        <span class="brand-text font-weight-light">
+            <?php
+                echo $GLOBALS['mensaje'];
+            ?>
+        </span> 
+    
     </a>
 
     <!-- Sidebar -->
     <div class="sidebar">
         <!-- Sidebar user (optional) -->
-
+        
+        <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+            <div class="info">
+                <a href=# class="d-block">
+                    <?php
+                        echo ($_SESSION['usuario']);
+                    ?>
+                </a> 
+            </div>
+          </div>      
 
         <!-- Sidebar Menu -->
         <nav class="mt-2">
@@ -18,7 +33,7 @@
                with font-awesome or any other icon font library -->
 
                 <li class="nav-item">
-                <a href="/index.php" class="nav-link">
+                <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-home"></i>
                         <p>Inicio</p>
                     </a>

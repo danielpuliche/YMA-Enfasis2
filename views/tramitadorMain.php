@@ -1,10 +1,12 @@
 <?php
+    $GLOBALS['mensaje'] = 'Tramitador';
+    include("../settings/sesiones.php");
     include("../templates/header.php");
     include("../templates/navbar.php");
     include("../templates/menu.php");
     include('../settings/db.php'); 
     // Validacion de la sesion
-    include("../settings/sesiones.php");
+    
 ?>
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
