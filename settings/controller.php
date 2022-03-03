@@ -20,21 +20,23 @@ if (isset($_POST['login'])) {
             if ($existe) {
                 if (password_verify($password, $password_gotten)) {
                     $stmt->close();
-                    $sql = "SELECT tramitador.usuario_id from tramitador,usuario WHERE (usuario.correo = '$correo' AND tramitador.usuario_id=usuario.usuario_id)";
+                    $sql = "SELECT tramitador.tramitador_id from tramitador,usuario WHERE (usuario.correo = '$correo' AND tramitador.tramitador_id=usuario.usuario_id)";
                     $result = $connection->query($sql);
                     $id = $result->fetch_assoc();
                     if ($id != null){
                         session_start();
                         $_SESSION['usuario'] = $correo;
+                        $_SESSION['usuario_id'] = $id["tramitador_id"];
                         $connection->close();
                         header("Location: /views/tramitador/tramitadorMain.php");
                     }else{
-                        $sql = "SELECT solicitante.usuario_id from solicitante,usuario WHERE (usuario.correo = '$correo' AND solicitante.usuario_id=usuario.usuario_id)";
+                        $sql = "SELECT solicitante.solicitante_id from solicitante,usuario WHERE (usuario.correo = '$correo' AND solicitante.solicitante_id=usuario.usuario_id)";
                         $result = $connection->query($sql);
                         $id = $result->fetch_assoc();
                         if ($id != null){
                             session_start();
                             $_SESSION['usuario'] = $correo;
+                            $_SESSION['usuario_id'] = $id["solicitante_id"];
                             $connection->close();
                             header("Location: /views/solicitante/solicitanteMain.php");
                         }else{
@@ -98,7 +100,7 @@ if (isset($_POST['signup_tramitador'])) {
 
 }
 
-// Controlador para crear tramitador
+// Controlador para crear solicitante
 if (isset($_POST['signup_solicitante'])) {
 
     $nombres = $_POST['names'];
@@ -135,16 +137,6 @@ if (isset($_POST['signup_solicitante'])) {
     }
 
 }
-
-
-
-
-
-
-
-
-
-
 
 // Controlador para editar film
 if (isset($_POST['edit-film'])) {

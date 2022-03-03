@@ -34,7 +34,7 @@
                     <div class="inner">
                         <p>Historial de trámites</p>
                     </div>
-                    <a href="#" class="small-box-footer"><i class="fas fa-arrow-circle-right"></i></a>
+                    <a href="historialTramites.php" class="small-box-footer"><i class="fas fa-arrow-circle-right"></i></a>
                 </div>
             </div>
 
@@ -44,7 +44,7 @@
                     <div class="inner">
                         <p>Trámites en proceso</p>
                     </div>
-                    <a href="#" class="small-box-footer"><i class="fas fa-arrow-circle-right"></i></a>
+                    <a href="tramitesProceso.php" class="small-box-footer"><i class="fas fa-arrow-circle-right"></i></a>
                 </div>
             </div>
 
@@ -54,7 +54,7 @@
                     <div class="inner">
                         <p>Seleccionar trámite</p>
                     </div>
-                    <a href="#" class="small-box-footer"><i class="fas fa-arrow-circle-right"></i></a>
+                    <a href="" class="small-box-footer"><i class="fas fa-arrow-circle-right"></i></a>
                 </div>
             </div>
             <!-- ./col -->
