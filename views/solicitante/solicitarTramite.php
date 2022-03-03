@@ -225,11 +225,11 @@ include('../../settings/db.php');
                     <div class="form-row">
                         <div class="form-group col-6">
                             <label for="inputAddress">Dirección recogida</label>
-                            <input type="text" class="form-control" name="direccionrecogida" placeholder="Calle 0 # 0-00" required>
+                            <input type="text" class="form-control" name="direccion_recogida" placeholder="Calle 0 # 0-00" required>
                         </div>
                         <div class="form-group col-6">
                             <label for="inputAddress">Dirección entrega</label>
-                            <input type="text" class="form-control" name="direccionentrega" placeholder="Calle 0 # 0-00" required>
+                            <input type="text" class="form-control" name="direccion_entrega" placeholder="Calle 0 # 0-00" required>
                         </div>
                     </div>
 

@@ -8,6 +8,7 @@ include("../../templates/menu.php");
 // Conexion a la base de datos
 include("../../settings/db.php");
 ?>
+
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">

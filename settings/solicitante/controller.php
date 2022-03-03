@@ -49,10 +49,9 @@ if (isset($_POST['crear_cita'])) {
     $regimen = $_POST['regimen'];
     $precio = $_POST['preciocita'];
     $estado_tramite = 'Espera';
+
     $especialidad = $_POST['especialidad'];
-    $fecha_entrega = $_POST['fecha_entrega'];
-    $direccion_entrega = $_POST['direccion_entrega'];
-    $direccion_recogida = $_POST['direccion_recogida'];
+    $fecha_disponible = $_POST['fecha_disponible'];
 
     $query = "INSERT INTO tramite(solicitante_id, eps, regimen, precio, estado_tramite) VALUES ('$solicitante_id', '$eps', '$regimen', '$precio', '$estado_tramite')";
     
@@ -66,7 +65,7 @@ if (isset($_POST['crear_cita'])) {
         $result = mysqli_query($connection, $query);
         $result = $result->fetch_assoc();
         $tramite_id = $result['max_id'];       
-        $query = "INSERT INTO tramite_citamedica(tramite_citamedica_id, especialidad, fecha_entrega) VALUES ('$tramite_id', '$especialidad', '$fecha_entrega')";        
+        $query = "INSERT INTO tramite_citamedica(tramite_citamedica_id, especialidad, fecha_disponible) VALUES ('$tramite_id', '$especialidad', '$fecha_disponible')";        
         $result = $connection->query($query);
         
         if (!$result) {
@@ -79,21 +78,27 @@ if (isset($_POST['crear_cita'])) {
 }
 
 //Controlador para crear trámite medicamentos
-if (isset($_POST['crear_medicamentos'])) {
+if (isset($_POST['crear_medicamento'])) {
+    
+    // echo "medicamentos";
+
     session_start();
     $solicitante_id = $_SESSION['usuario_id'];
     $eps = $_POST['eps'];
     $regimen = $_POST['regimen'];
     $precio = $_POST['preciomedicamentos'];
     $estado_tramite = 'Espera';
+
     $medicamentos = $_POST['medicamentos'];
     $fecha_entrega = $_POST['fecha_entrega'];
+    $direccion_entrega = $_POST['direccion_entrega']; 
+    $direccion_recogida = $_POST['direccion_recogida'];
 
     $query = "INSERT INTO tramite(solicitante_id, eps, regimen, precio, estado_tramite) VALUES ('$solicitante_id', '$eps', '$regimen', '$precio', '$estado_tramite')";
     
     //Ejecuta la consulta
     $resultado = mysqli_query($connection, $query);
-
+    
     if (!$resultado) {
         exit("Error");
     }else{
@@ -101,7 +106,7 @@ if (isset($_POST['crear_medicamentos'])) {
         $result = mysqli_query($connection, $query);
         $result = $result->fetch_assoc();
         $tramite_id = $result['max_id'];       
-        $query = "INSERT INTO tramite_citamedica(tramite_citamedica_id, especialidad, fecha_entrega) VALUES ('$tramite_id', '$especialidad', '$fecha_entrega')";        
+        $query = "INSERT INTO tramite_medicamentos(tramite_medicamentos_id, medicamentos, direccion_recogida, direccion_entrega, fecha_entrega) VALUES ('$tramite_id', '$medicamentos', '$direccion_recogida', '$direccion_entrega', '$fecha_entrega')";        
         $result = $connection->query($query);
         
         if (!$result) {

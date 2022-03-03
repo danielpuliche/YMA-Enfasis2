@@ -1,17 +1,15 @@
 <?php
 // Conexion a la base de datos
-include_once("../settings/db.php");
+include_once("../../settings/db.php");
 $connection = mysqli_connect($host, $user, $pw, $db);
 mysqli_set_charset($connection, "utf8");
 
-// Controlador para crear solicitante
-if (isset($_POST['signup_solicitante'])) {
+// Controlador para crear tramitador
+if (isset($_POST['signup_tramitador'])) {
 
     $nombres = $_POST['names'];
     $apellidos = $_POST['lastnames'];
     $identificacion = $_POST['identificacion'];
-    $telefono = $_POST['phone'];
-    $direccion = $_POST['address'];
     $correo = $_POST['email'];
     $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
     $query = "INSERT INTO usuario(`correo`, `nombres`, `apellidos`, `identificacion`, `password_usuario`) VALUES ('$correo','$nombres','$apellidos','$identificacion','$password')";
@@ -23,17 +21,17 @@ if (isset($_POST['signup_solicitante'])) {
     }
 
     if (!$resultado) {
-        header("Location: /views/solicitante/registroSolicitante.php?mensaje=2");
+        header("Location: /views/tramitador/registroTramitador.php?mensaje=2");
     }else{
         $sql = "SELECT usuario.usuario_id from usuario WHERE usuario.correo = '$correo'";
         $result = $connection->query($sql);
-        $id_solicitante = $result->fetch_assoc()['usuario_id'];
-        $query = "INSERT INTO solicitante(`usuario_id`,`telefono`,`direccion`) VALUES ('$id_solicitante','$telefono','$direccion')";
+        $id_tramitador = $result->fetch_assoc()['usuario_id'];
+        $query = "INSERT INTO tramitador(`tramitador_id`) VALUES ('$id_tramitador')";
 
         //Ejecuta la consulta
         $resultado = mysqli_query($connection, $query);
         if (!$resultado) {
-            header("Location: /views/solicitante/registroSolicitante.php?mensaje=3");
+            header("Location: /views/tramitador/registroTramitador.php?mensaje=3");
         }else{
             //Con este comando retorna al login
             header("Location: /views/login.php?mensaje=4");
@@ -41,6 +39,7 @@ if (isset($_POST['signup_solicitante'])) {
     }
 
 }
+
 
 // Controlador para editar film
 if (isset($_POST['edit-film'])) {
