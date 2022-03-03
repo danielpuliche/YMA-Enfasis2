@@ -23,7 +23,7 @@ if (isset($_POST['login'])) {
                     $sql = "SELECT tramitador.tramitador_id from tramitador,usuario WHERE (usuario.correo = '$correo' AND tramitador.tramitador_id=usuario.usuario_id)";
                     $result = $connection->query($sql);
                     $id = $result->fetch_assoc();
-                    if ($id != null){
+                    if ($id != null) {
                         session_start();
                         $_SESSION['usuario'] = $correo;
                         $_SESSION['usuario_id'] = $id["tramitador_id"];
@@ -33,17 +33,16 @@ if (isset($_POST['login'])) {
                         $sql = "SELECT solicitante.solicitante_id from solicitante,usuario WHERE (usuario.correo = '$correo' AND solicitante.solicitante_id=usuario.usuario_id)";
                         $result = $connection->query($sql);
                         $id = $result->fetch_assoc();
-                        if ($id != null){
+                        if ($id != null) {
                             session_start();
                             $_SESSION['usuario'] = $correo;
                             $_SESSION['usuario_id'] = $id["solicitante_id"];
                             $connection->close();
                             header("Location: /views/solicitante/solicitanteMain.php");
-                        }else{
+                        } else {
                             echo 'xD';
                         }
                     }
-
                 } else {
 
                     $connection->close();
@@ -64,79 +63,12 @@ if (isset($_POST['login'])) {
     }
 }
 
-// Controlador para crear tramitador
-if (isset($_POST['signup_tramitador'])) {
 
-    $nombres = $_POST['names'];
-    $apellidos = $_POST['lastnames'];
-    $identificacion = $_POST['identificacion'];
-    $correo = $_POST['email'];
-    $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
-    $query = "INSERT INTO usuario(`correo`, `nombres`, `apellidos`, `identificacion`, `password_usuario`) VALUES ('$correo','$nombres','$apellidos','$identificacion','$password')";
-    //Ejecuta la consulta
 
-    try{
-        $resultado = mysqli_query($connection, $query);
-    } catch(Exception){
-    }
 
-    if (!$resultado) {
-        header("Location: /views/tramitador/registroTramitador.php?mensaje=2");
-    }else{
-        $sql = "SELECT usuario.usuario_id from usuario WHERE usuario.correo = '$correo'";
-        $result = $connection->query($sql);
-        $id_tramitador = $result->fetch_assoc()['usuario_id'];
-        $query = "INSERT INTO tramitador(`usuario_id`) VALUES ('$id_tramitador')";
 
-        //Ejecuta la consulta
-        $resultado = mysqli_query($connection, $query);
-        if (!$resultado) {
-            header("Location: /views/tramitador/registroTramitador.php?mensaje=3");
-        }else{
-            //Con este comando retorna al login
-            header("Location: /views/login.php?mensaje=4");
-        }
-    }
 
-}
 
-// Controlador para crear solicitante
-if (isset($_POST['signup_solicitante'])) {
-
-    $nombres = $_POST['names'];
-    $apellidos = $_POST['lastnames'];
-    $identificacion = $_POST['identificacion'];
-    $telefono = $_POST['phone'];
-    $direccion = $_POST['address'];
-    $correo = $_POST['email'];
-    $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
-    $query = "INSERT INTO usuario(`correo`, `nombres`, `apellidos`, `identificacion`, `password_usuario`) VALUES ('$correo','$nombres','$apellidos','$identificacion','$password')";
-    //Ejecuta la consulta
-
-    try{
-        $resultado = mysqli_query($connection, $query);
-    } catch(Exception){
-    }
-
-    if (!$resultado) {
-        header("Location: /views/solicitante/registroSolicitante.php?mensaje=2");
-    }else{
-        $sql = "SELECT usuario.usuario_id from usuario WHERE usuario.correo = '$correo'";
-        $result = $connection->query($sql);
-        $id_solicitante = $result->fetch_assoc()['usuario_id'];
-        $query = "INSERT INTO solicitante(`usuario_id`,`telefono`,`direccion`) VALUES ('$id_solicitante','$telefono','$direccion')";
-
-        //Ejecuta la consulta
-        $resultado = mysqli_query($connection, $query);
-        if (!$resultado) {
-            header("Location: /views/solicitante/registroSolicitante.php?mensaje=3");
-        }else{
-            //Con este comando retorna al login
-            header("Location: /views/login.php?mensaje=4");
-        }
-    }
-
-}
 
 // Controlador para editar film
 if (isset($_POST['edit-film'])) {

@@ -8,7 +8,21 @@ El sistema permite el manejo de estos dos usuarios, las interfaces necesarias pa
 
 # - Tramitador:
 
-        Escoger trámite
-        Contrapropone precio
-        Cambiar estado trámite -> Negociación
-        Mostrar en Trámites en proceso
+	Escoger trámite
+	Contrapropone precio
+	Cambiar estado trámite -> Negociación
+	Mostrar en Trámites en proceso
+
+# - Solicitante:
+
+	1. Crear trámite
+		Seleccionar tipo de trámite
+		Creación trámite
+		Creación trámite específico
+		Mostrar en trámites en proceso
+	2. Historial de trámites
+		Obtener trámites finalizados
+		Listarlos
+	3. Ver trámites
+		Obtener trámites en espera, negociación y en proceso
+		Listarlos

@@ -1,5 +1,5 @@
 <?php
-$GLOBALS['mensaje'] = 'Tramitador';
+$GLOBALS['mensaje'] = 'Solicitante';
 // Validacion de la sesion
 include("../../settings/sesiones.php");
 include("../../templates/header.php");
@@ -39,11 +39,11 @@ include("../../settings/db.php");
                     <table id="myTable" class="table table-bordered table-striped">
                         <thead>
                             <tr>
-                                <th>Solicitante</th>
-                                <th>Teléfono</th>
+                                <th>Tramitador</th>
                                 <th>Eps</th>
                                 <th>Régimen</th>
                                 <th>Especialidad</th>
+                                <th>Fecha disponible</th>
                                 <th>Precio</th>
                                 <th>Documentos</th>
                                 <th>Estado</th>
@@ -55,10 +55,10 @@ include("../../settings/db.php");
                                 $conn = mysqli_connect($host, $user, $pw, $db);
                                 $conn->set_charset("utf8");
                                 $id = $_SESSION['usuario_id'];
-                                $sql = "SELECT u.nombres, u.apellidos, s.telefono, s.direccion, t.eps, t.regimen, tm.especialidad, tm.fecha_disponible, t.precio, t.estado_tramite FROM tramite t
-                                INNER JOIN usuario u ON u.usuario_id=t.solicitante_id INNER JOIN solicitante s ON s.solicitante_id=t.solicitante_id
+                                $sql = "SELECT u.nombres, u.apellidos, t.eps, t.regimen, tm.especialidad, tm.fecha_disponible, t.precio, t.estado_tramite FROM tramite t
+                                INNER JOIN usuario u ON u.usuario_id=t.tramitador_id INNER JOIN tramitador tr ON tr.tramitador_id=t.tramitador_id
                                 INNER JOIN tramite_citamedica tm ON tm.tramite_citamedica_id=t.tramite_id
-                                WHERE t.tramitador_id=$id AND t.estado_tramite='Finalizado'";
+                                WHERE t.solicitante_id=$id AND t.estado_tramite='Finalizado'";
                                 $resultado = $conn->query($sql);
                             } catch (Exception $e) {
                                 $error = $e->getMessage();
@@ -68,10 +68,10 @@ include("../../settings/db.php");
 
                                 <tr>
                                     <td> <?php echo $tramite['nombres']; ?> <?php echo $tramite['apellidos']; ?> </td>
-                                    <td> +57 <?php echo $tramite['telefono']; ?> </td>
                                     <td> <?php echo $tramite['eps']; ?> </td>
                                     <td> <?php echo $tramite['regimen']; ?> </td>
                                     <td> <?php echo $tramite['especialidad']; ?> </td>
+                                    <td> <?php echo $tramite['fecha_disponible']; ?> </td>
                                     <td> <?php echo $tramite['precio']; ?> </td>
                                     <td> <a href="https://file-examples-com.github.io/uploads/2017/10/file-sample_150kB.pdf" target="_blank">Ver aquí</a> </td>
                                     <td> <?php echo $tramite['estado_tramite']; ?> </td>
@@ -81,11 +81,11 @@ include("../../settings/db.php");
                         </tbody>
                         <tfoot></tfoot>
                             <tr>
-                                <th>Solicitante</th>
-                                <th>Teléfono</th>
+                                <th>Tramitador</th>
                                 <th>Eps</th>
                                 <th>Régimen</th>
                                 <th>Especialidad</th>
+                                <th>Fecha disponible</th>
                                 <th>Precio</th>
                                 <th>Documentos</th>
                                 <th>Estado</th>
@@ -109,11 +109,11 @@ include("../../settings/db.php");
                     <table id="myTable1" class="table table-bordered table-striped">
                         <thead>
                             <tr>
-                                <th>Solicitante</th>
-                                <th>Teléfono</th>
+                                <th>Tramitador</th>
                                 <th>Eps</th>
                                 <th>Régimen</th>
                                 <th>Medicamentos</th>
+                                <th>Fecha Entrega</th>
                                 <th>Precio</th>
                                 <th>Documentos</th>
                                 <th>Estado</th>
@@ -125,10 +125,10 @@ include("../../settings/db.php");
                                 $conn = mysqli_connect($host, $user, $pw, $db);
                                 $conn->set_charset("utf8");
                                 $id = $_SESSION['usuario_id'];
-                                $sql = "SELECT u.nombres, u.apellidos, s.telefono, s.direccion, t.eps, t.regimen, tm.medicamentos, tm.fecha_entrega, t.precio, t.estado_tramite FROM tramite t
-                                INNER JOIN usuario u ON u.usuario_id=t.solicitante_id INNER JOIN solicitante s ON s.solicitante_id=t.solicitante_id
+                                $sql = "SELECT u.nombres, u.apellidos, t.eps, t.regimen, tm.medicamentos, tm.fecha_entrega, t.precio, t.estado_tramite FROM tramite t
+                                INNER JOIN usuario u ON u.usuario_id=t.tramitador_id INNER JOIN tramitador tr ON tr.tramitador_id=t.tramitador_id
                                 INNER JOIN tramite_medicamentos tm ON tm.tramite_medicamentos_id=t.tramite_id
-                                WHERE t.tramitador_id=$id AND t.estado_tramite='Finalizado'";
+                                WHERE t.solicitante_id=$id AND t.estado_tramite='Finalizado'";
                                 $resultado = $conn->query($sql);
                             } catch (Exception $e) {
                                 $error = $e->getMessage();
@@ -138,10 +138,10 @@ include("../../settings/db.php");
 
                                 <tr>
                                     <td> <?php echo $tramite['nombres']; ?> <?php echo $tramite['apellidos']; ?> </td>
-                                    <td> +57 <?php echo $tramite['telefono']; ?> </td>
                                     <td> <?php echo $tramite['eps']; ?> </td>
                                     <td> <?php echo $tramite['regimen']; ?> </td>
                                     <td> <?php echo $tramite['medicamentos']; ?> </td>
+                                    <td> <?php echo $tramite['fecha_entrega']; ?> </td>
                                     <td> <?php echo $tramite['precio']; ?> </td>
                                     <td> <a href="https://file-examples-com.github.io/uploads/2017/10/file-sample_150kB.pdf" target="_blank">Ver aquí</a> </td>
                                     <td> <?php echo $tramite['estado_tramite']; ?> </td>
@@ -151,11 +151,11 @@ include("../../settings/db.php");
                         </tbody>
                         <tfoot></tfoot>
                             <tr>
-                                <th>Solicitante</th>
-                                <th>Teléfono</th>
+                                <th>Tramitador</th>
                                 <th>Eps</th>
                                 <th>Régimen</th>
                                 <th>Medicamentos</th>
+                                <th>Fecha Entrega</th>
                                 <th>Precio</th>
                                 <th>Documentos</th>
                                 <th>Estado</th>
