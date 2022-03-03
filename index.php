@@ -72,7 +72,7 @@
          <div id="myCarousel" class="carousel slide banner-main" data-ride="carousel">
             <div class="carousel-inner">
                <div class="carousel-item active">
-                  <img class="first-slide" src="static/img/inicio.png" alt="First slide">
+                  <img class="first-slide" src="static/img/tramite.jpg" width="100%" alt="First slide">
                   <div class="container">
                      <div class="carousel-caption relative">
                      <h1><FONT COLOR="White">¿Necesitas un trámite?</FONT>
@@ -82,7 +82,7 @@
                   </div>
                </div>
                <div class="carousel-item">
-                  <img class="second-slide" src="static/img/slide.png" alt="Second slide">
+                  <img class="second-slide" src="static/img/negocia.jpg" width="100%" alt="Second slide">
                   <div class="container">
                      <div class="carousel-caption relative">
                         <h1><FONT COLOR="black">Prevenir el dengue, está en tus manos </FONT>
@@ -92,7 +92,7 @@
                   </div>
                </div>
                <div class="carousel-item">
-                  <img class="third-slide" src="static/img/mosco.png" alt="Third slide">
+                  <img class="third-slide" src="static/img/pagos.jpg" width="100%" alt="Third slide">
                   <div class="container">
                      <div class="carousel-caption relative">
                      <h1><FONT COLOR="black">Tu salud, no es un juego </FONT>
