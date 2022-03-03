@@ -17,7 +17,7 @@ if (isset($_POST['login'])) {
         $stmt->bind_result($password_gotten); //bind_result retorna los resultados de usar SELECT y permite asignarle en ese retorno las variables que se desean usar
         if ($stmt->affected_rows) {
             $existe = $stmt->fetch();
-            if ($existe) {                
+            if ($existe) {
                 if (password_verify($password, $password_gotten)) {
                     $stmt->close();
                     $sql = "SELECT tramitador.usuario_id from tramitador,usuario WHERE (usuario.correo = '$correo' AND tramitador.usuario_id=usuario.usuario_id)";
@@ -27,7 +27,7 @@ if (isset($_POST['login'])) {
                         session_start();
                         $_SESSION['usuario'] = $correo;
                         $connection->close();
-                        header("Location: /views/tramitadorMain.php");
+                        header("Location: /views/tramitador/tramitadorMain.php");
                     }else{
                         $sql = "SELECT solicitante.usuario_id from solicitante,usuario WHERE (usuario.correo = '$correo' AND solicitante.usuario_id=usuario.usuario_id)";
                         $result = $connection->query($sql);
@@ -36,14 +36,14 @@ if (isset($_POST['login'])) {
                             session_start();
                             $_SESSION['usuario'] = $correo;
                             $connection->close();
-                            header("Location: /views/solicitanteMain.php");
+                            header("Location: /views/solicitante/solicitanteMain.php");
                         }else{
                             echo 'xD';
                         }
-                    }                    
-                    
+                    }
+
                 } else {
-                    
+
                     $connection->close();
                     header("Location: /views/login.php?mensaje=1");
                 }
@@ -76,10 +76,10 @@ if (isset($_POST['signup_tramitador'])) {
     try{
         $resultado = mysqli_query($connection, $query);
     } catch(Exception){
-    }   
-     
+    }
+
     if (!$resultado) {
-        header("Location: /views/registroTramitador.php?mensaje=2");
+        header("Location: /views/tramitador/registroTramitador.php?mensaje=2");
     }else{
         $sql = "SELECT usuario.usuario_id from usuario WHERE usuario.correo = '$correo'";
         $result = $connection->query($sql);
@@ -89,13 +89,13 @@ if (isset($_POST['signup_tramitador'])) {
         //Ejecuta la consulta
         $resultado = mysqli_query($connection, $query);
         if (!$resultado) {
-            header("Location: /views/registroTramitador.php?mensaje=3");
+            header("Location: /views/tramitador/registroTramitador.php?mensaje=3");
         }else{
             //Con este comando retorna al login
             header("Location: /views/login.php?mensaje=4");
         }
-    }    
-    
+    }
+
 }
 
 // Controlador para crear tramitador
@@ -114,10 +114,10 @@ if (isset($_POST['signup_solicitante'])) {
     try{
         $resultado = mysqli_query($connection, $query);
     } catch(Exception){
-    }   
-     
+    }
+
     if (!$resultado) {
-        header("Location: /views/registroSolicitante.php?mensaje=2");
+        header("Location: /views/solicitante/registroSolicitante.php?mensaje=2");
     }else{
         $sql = "SELECT usuario.usuario_id from usuario WHERE usuario.correo = '$correo'";
         $result = $connection->query($sql);
@@ -127,13 +127,13 @@ if (isset($_POST['signup_solicitante'])) {
         //Ejecuta la consulta
         $resultado = mysqli_query($connection, $query);
         if (!$resultado) {
-            header("Location: /views/registroSolicitante.php?mensaje=3");
+            header("Location: /views/solicitante/registroSolicitante.php?mensaje=3");
         }else{
             //Con este comando retorna al login
             header("Location: /views/login.php?mensaje=4");
         }
-    }    
-    
+    }
+
 }
 
 

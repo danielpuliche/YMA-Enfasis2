@@ -1,10 +1,3 @@
-<?php
-session_start();
-if(isset($_GET['cerrar_sesion'])){
-    session_destroy();
-}
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,7 +14,7 @@ if(isset($_GET['cerrar_sesion'])){
 
     <link rel="stylesheet" href="../static/css/styles.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/admin-lte@3.2/dist/css/adminlte.min.css">
-    
+
 </head>
 
 <body class="hold-transition login-page">
@@ -112,7 +105,7 @@ if(isset($_GET['cerrar_sesion'])){
                     </script>
             <?php
                 }else{
-    ?>        
+    ?>
     <script>
                 Swal.fire({
                     icon: 'error',
@@ -120,8 +113,8 @@ if(isset($_GET['cerrar_sesion'])){
                     text: 'Datos no válidos!',
                 })
             </script>
-    <?php      
-        }          
+    <?php
+        }
     }
     ?>
 </body>

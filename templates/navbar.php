@@ -15,7 +15,7 @@
             </a>
         </li>
         <li class="nav-item">
-            <a href="/views/login.php?cerrar_sesion=true" class="btn btn-success btn-flat float-right">Cerrar sesión</a>
+            <a href="/index.php?cerrar_sesion=true" class="btn btn-success btn-flat float-right">Cerrar sesión</a>
         </li>
     </ul>
 </nav>
