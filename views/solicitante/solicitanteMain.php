@@ -8,6 +8,7 @@
     // Validacion de la sesion
 
 ?>
+
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
@@ -30,14 +31,31 @@
             <!-- col -->
             <div class="col-lg-3 col-6">
                 <!-- small box -->
+                <div class="small-box bg-warning">
+                    <div class="inner">
+                        <p>Historial de trámites</p>
+                    </div>
+                    <a href="historialTramites.php" class="small-box-footer"><i class="fas fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-6">
+                <!-- small box -->
+                <div class="small-box bg-info">
+                    <div class="inner">
+                        <p>Trámites en proceso</p>
+                    </div>
+                    <a href="tramitesProceso.php" class="small-box-footer"><i class="fas fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-6">
+                <!-- small box -->
                 <div class="small-box bg-success">
                     <div class="inner">
-                        <p>Películas</p>
+                        <p>Solicitar trámite</p>
                     </div>
-                    <div class="icon">
-                        <i class="fas fa-chart-bar"></i>
-                    </div>
-                    <a href="/views/read.php" class="small-box-footer">More info  <i class="fas fa-arrow-circle-right"></i></a>
+                    <a href="solicitarTramite.php" class="small-box-footer"><i class="fas fa-arrow-circle-right"></i></a>
                 </div>
             </div>
             <!-- ./col -->
