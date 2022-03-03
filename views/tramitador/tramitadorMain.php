@@ -32,12 +32,29 @@
                 <!-- small box -->
                 <div class="small-box bg-success">
                     <div class="inner">
-                        <p>Películas</p>
+                        <p>Historial de trámites</p>
                     </div>
-                    <div class="icon">
-                        <i class="fas fa-chart-bar"></i>
+                    <a href="#" class="small-box-footer"><i class="fas fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-6">
+                <!-- small box -->
+                <div class="small-box bg-success">
+                    <div class="inner">
+                        <p>Trámites en proceso</p>
                     </div>
-                    <a href="/views/read.php" class="small-box-footer">More info  <i class="fas fa-arrow-circle-right"></i></a>
+                    <a href="#" class="small-box-footer"><i class="fas fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-6">
+                <!-- small box -->
+                <div class="small-box bg-success">
+                    <div class="inner">
+                        <p>Seleccionar trámite</p>
+                    </div>
+                    <a href="#" class="small-box-footer"><i class="fas fa-arrow-circle-right"></i></a>
                 </div>
             </div>
             <!-- ./col -->
