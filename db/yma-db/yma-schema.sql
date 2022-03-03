@@ -58,7 +58,7 @@ CREATE TABLE tramite (
   tramitador_id SMALLINT UNSIGNED NOT NULL,
   eps VARCHAR(20),
   regimen ENUM('Contributivo','Subsidiado'),
-  precio DOUBLE(6,2),
+  precio DOUBLE,
   estado_tramite ENUM('Espera','Negociacion','Proceso','Finalizado') NOT NULL,
   PRIMARY KEY (tramite_id),
   FOREIGN KEY (solicitante_id) REFERENCES solicitante(usuario_id) ON DELETE RESTRICT ON UPDATE CASCADE,
