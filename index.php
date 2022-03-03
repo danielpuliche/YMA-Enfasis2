@@ -56,8 +56,8 @@
                         <nav class="main-menu">
                            <ul class="menu-area-main">
                               <li class="active"> <a class="sesion" href="views\login.php">Iniciar Sesión</a> </li>
-                              <li> <a class="sesion" href="interfaces\usuarios\consulta\registrar.php">¿Solicitante nuevo?</a> </li>
-                              <li> <a class="sesion" href="interfaces\usuarios\consulta\registrar.php">¿Tramitador nuevo?</a> </li>
+                              <li> <a class="sesion" href="/views/solicitante/registroSolicitante.php">¿Solicitante nuevo?</a> </li>
+                              <li> <a class="sesion" href="/views/tramitador/registroTramitador.php">¿Tramitador nuevo?</a> </li>
                            </ul>
                         </nav>
                      </div>
