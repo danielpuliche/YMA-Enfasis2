@@ -30,7 +30,7 @@
             <!-- col -->
             <div class="col-lg-3 col-6">
                 <!-- small box -->
-                <div class="small-box bg-success">
+                <div class="small-box bg-warning">
                     <div class="inner">
                         <p>Historial de trámites</p>
                     </div>
@@ -40,7 +40,7 @@
 
             <div class="col-lg-3 col-6">
                 <!-- small box -->
-                <div class="small-box bg-success">
+                <div class="small-box bg-info">
                     <div class="inner">
                         <p>Trámites en proceso</p>
                     </div>

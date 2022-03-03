@@ -108,10 +108,12 @@ if (isset($_GET['cerrar_sesion'])) {
                   <div class="carousel-caption relative">
                      <h1>
                         <FONT COLOR="white">Todo al alcance de tus manos</FONT>
-                        
+
                      </h1>
                      <br></h1>
-                     <p><B><FONT COLOR="white">Desde la comodidad de tu hogar</FONT></B></p>
+                     <p><B>
+                           <FONT COLOR="white">Desde la comodidad de tu hogar</FONT>
+                        </B></p>
 
                   </div>
                </div>
@@ -132,17 +134,16 @@ if (isset($_GET['cerrar_sesion'])) {
             <div class="col-md-12">
                <div class="titlepage">
                   <h2>Descripción del sistema</h2>
-                  <span>El proyecto Ehealth de la Universidad del Cauca, consiste en un sistema que, mediante la recolección de
-                     variables del ambiente en determinados sectores de la ciudad de Popayán, indica la probabilidad de que
-                     los habitantes adquieran enfermedades como <i> dengue </i> o <i> fiebre amarilla </i> .
-                     Las variables recolectadas del entorno son: presencia de lluvia, humedad y temperatura.</span>
+                  <span>El proyecto YMA de la Universidad del Cauca, consiste en un sistema que permite la conexión entre solicitantes
+                     y tramitadores, esto con el find de lograr una mayor facilidad a la hora de realizar tus trámites médicos
+                     desde la comodidad de tu hogar, a la vez que ayuda a generar empleos y fomentar el mejoramiento de los sistemas de la salud.</span>
                </div>
             </div>
          </div>
          <div class="row">
             <div class="col-md-12">
                <div class="img-box">
-                  <figure><img src="static/img/logo.png" width="500" alt="img" /></figure>
+                  <figure><img src="static/img/Slide.png" width="500" alt="img" /></figure>
                   <a href="#">Inicio</a>
                </div>
             </div>
@@ -158,9 +159,8 @@ if (isset($_GET['cerrar_sesion'])) {
                <div class="titlepage">
                   <h2>Servicios</h2>
                   <span>
-                     <ul>Muestreo de variables que influyen en la probabilidad de adquirir
-                        dengue o fiebre amarilla</u>
-                        <ul>Evidencia gráfica de las probabilidades de adquirir <i> dengue </i> o <i> fiebre amarilla </i> .</ul>
+                     <ul>Se brinda la oportunidad de tener un tramitador al alcance de tu mano, o de convertirte en uno!</u>
+                        <ul>Se genera<i> comodidad </i> y se <i> impulsa el empleo y desarrollo del país </i> .</ul>
                   </span>
                </div>
             </div>
@@ -183,17 +183,17 @@ if (isset($_GET['cerrar_sesion'])) {
             <div class="col-md-12">
                <div class="titlepage">
                   <h2>¿Quienes somos?</h2>
-                  <span>Somos un grupo de seis (6) estudiantes de séptimo semestre de la Universidad del Cauca,
-                     con el objetivo de crear un proyecto que suministre a los ciudadanos el
-                     indice de probabilidad de contagio de <i> dengue </i> o <i> fiebre amarilla </i> en la ciudad de Popayán y
-                     del mismo modo que promueva el cuidado de su salud.</span>
+                  <span>Somos un grupo de cuatro (4) estudiantes de octavo semestre de la Universidad del Cauca,
+                     con el objetivo de crear un proyecto que suministre a los ciudadanos la oportunidad de tener 
+                     un tramitador al alcance de su mano, o de convertirte en uno!. De esta forma se genera<i> comodidad </i>
+                     y se <i> impulsa el empleo y desarrollo del país </i> .</span>
                </div>
             </div>
          </div>
          <div class="row">
             <div class="col-md-12">
                <div class="img-box">
-                  <figure><img src="static/img/collage.jpg" width="700" alt="img" /></figure>
+                  <figure><img src="static/img/collage.png" width="500" alt="img" /></figure>
                   <a href="#">Inicio</a>
                </div>
             </div>

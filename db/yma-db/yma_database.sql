@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Mar 03, 2022 at 03:30 AM
+-- Generation Time: Mar 03, 2022 at 09:16 AM
 -- Server version: 5.7.33
 -- PHP Version: 8.1.2
 
@@ -20,10 +20,8 @@ SET time_zone = "+00:00";
 --
 -- Database: `yma_database`
 --
-
-DROP SCHEMA IF EXISTS yma_database;
-CREATE SCHEMA yma_database;
-USE yma_database;
+CREATE DATABASE IF NOT EXISTS `yma_database` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `yma_database`;
 
 -- --------------------------------------------------------
 
@@ -58,7 +56,8 @@ CREATE TABLE `solicitante` (
 INSERT INTO `solicitante` (`solicitante_id`, `telefono`, `direccion`) VALUES
 (2, '3123456789', 'Calle 0 # 0-00'),
 (4, '3000000000', 'Carrera 0 # 1-11'),
-(7, '1', 'Calle 1');
+(7, '1', 'Calle 1'),
+(11, '2', 'Calle 2');
 
 -- --------------------------------------------------------
 
@@ -101,16 +100,16 @@ CREATE TABLE `tramite` (
 --
 
 INSERT INTO `tramite` (`tramite_id`, `solicitante_id`, `tramitador_id`, `eps`, `regimen`, `precio`, `estado_tramite`) VALUES
-(1, 2, 3, 'Sanitas', 'Contributivo', 5000, 'Proceso'),
+(1, 2, 3, 'Sanitas', 'Contributivo', 5000, 'Negociacion'),
 (2, 4, 3, 'Nueva EPS', 'Contributivo', 8000, 'Proceso'),
-(3, 4, 1, 'Sanitas', 'Subsidiado', 5000, 'Proceso'),
+(3, 4, 1, 'Sanitas', 'Subsidiado', 5000, 'Finalizado'),
 (4, 2, 3, 'Sanitas', 'Contributivo', 5000, 'Proceso'),
 (5, 2, 3, 'Sanitas', 'Contributivo', 9000, 'Finalizado'),
 (6, 7, 1, 'Emmsanar', 'Subsidiado', 5000, 'Finalizado'),
 (7, 7, 1, 'Sanitas', 'Contributivo', 10000, 'Finalizado'),
 (8, 7, 3, 'Emmsanar', 'Contributivo', 5000, 'Finalizado'),
 (9, 2, 3, 'Sanitas', 'Contributivo', 5000, 'Proceso'),
-(10, 2, 3, 'Sanitas', 'Contributivo', 5000, 'Proceso'),
+(10, 2, 3, 'Sanitas', 'Contributivo', 5000, 'Negociacion'),
 (11, 2, 3, 'Sanitas', 'Contributivo', 5000, 'Proceso'),
 (12, 4, 3, 'Nueva EPS', 'Contributivo', 8000, 'Proceso'),
 (13, 4, 1, 'Sanitas', 'Subsidiado', 5000, 'Proceso'),
@@ -118,24 +117,24 @@ INSERT INTO `tramite` (`tramite_id`, `solicitante_id`, `tramitador_id`, `eps`, `
 (15, 2, 3, 'Sanitas', 'Contributivo', 9000, 'Finalizado'),
 (16, 7, 1, 'Emmsanar', 'Subsidiado', 5000, 'Finalizado'),
 (17, 7, 1, 'Sanitas', 'Contributivo', 10000, 'Finalizado'),
-(18, 7, 3, 'Emmsanar', 'Contributivo', 5000, 'Finalizado'),
+(18, 7, 3, 'Emmsanar', 'Contributivo', 5000, 'Negociacion'),
 (19, 2, 3, 'Sanitas', 'Contributivo', 5000, 'Proceso'),
 (20, 2, 3, 'Sanitas', 'Contributivo', 5000, 'Proceso'),
-(21, 2, 3, 'Sanitas', 'Contributivo', 5000, 'Proceso'),
+(21, 2, 3, 'Sanitas', 'Contributivo', 5000, 'Finalizado'),
 (22, 2, 3, 'Sanitas', 'Contributivo', 5000, 'Proceso'),
-(23, 4, 3, 'Nueva EPS', 'Contributivo', 8000, 'Proceso'),
+(23, 4, 3, 'Nueva EPS', 'Contributivo', 8000, 'Negociacion'),
 (24, 4, 1, 'Sanitas', 'Subsidiado', 5000, 'Proceso'),
-(25, 2, 3, 'Sanitas', 'Contributivo', 5000, 'Proceso'),
-(26, 2, 3, 'Sanitas', 'Contributivo', 9000, 'Finalizado'),
+(25, 2, 3, 'Sanitas', 'Contributivo', 5000, 'Negociacion'),
+(26, 2, 3, 'Sanitas', 'Contributivo', 9000, 'Negociacion'),
 (27, 7, 1, 'Emmsanar', 'Subsidiado', 5000, 'Finalizado'),
 (28, 7, 1, 'Sanitas', 'Contributivo', 10000, 'Finalizado'),
 (29, 7, 3, 'Emmsanar', 'Contributivo', 5000, 'Finalizado'),
 (30, 2, 3, 'Sanitas', 'Contributivo', 5000, 'Proceso'),
-(31, 2, 3, 'Sanitas', 'Contributivo', 5000, 'Proceso'),
+(31, 2, 3, 'Sanitas', 'Contributivo', 5000, 'Finalizado'),
 (32, 2, 3, 'Sanitas', 'Contributivo', 5000, 'Proceso'),
-(33, 4, 3, 'Nueva EPS', 'Contributivo', 8000, 'Proceso'),
+(33, 4, 3, 'Nueva EPS', 'Contributivo', 8000, 'Negociacion'),
 (34, 4, 1, 'Sanitas', 'Subsidiado', 5000, 'Proceso'),
-(35, 2, 3, 'Sanitas', 'Contributivo', 5000, 'Proceso'),
+(35, 2, 3, 'Sanitas', 'Contributivo', 5000, 'Finalizado'),
 (36, 2, 3, 'Sanitas', 'Contributivo', 9000, 'Finalizado'),
 (37, 7, 1, 'Emmsanar', 'Subsidiado', 5000, 'Finalizado'),
 (38, 7, 1, 'Sanitas', 'Contributivo', 10000, 'Finalizado'),
@@ -247,11 +246,12 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`usuario_id`, `correo`, `nombres`, `identificacion`, `apellidos`, `password_usuario`) VALUES
-(1, 'danielpuliche@gmail.com', 'Daniel', '1234567890', 'Puliche', '$2y$10$E4gzS2.vY157N0oSTfSFieBanwJ/ACbydzKqHeyZHVAXxn.VTMMWq'),
+(1, 'fredyromero@gmail.com', 'Fredy', '1234567890', 'Romero', '$2y$10$E4gzS2.vY157N0oSTfSFieBanwJ/ACbydzKqHeyZHVAXxn.VTMMWq'),
 (2, 'danielpuliche@unicauca.edu.co', 'Daniel F', '1230067890', 'Puliche C', '$2y$10$zHBNk7edLt63EhSP0V6w7.lgMeH76xVyjbNw8QxPP8egUAYKoPYCm'),
 (3, 'tramitador@test.com', 'Pepito', '120067809', 'Perez', '$2y$10$c5nzHCNweSCPSg11S0wYd.UcTdWTqeRWDzaC5zCuyMcRp5/1iTakK'),
 (4, 'solicitante@test.com', 'Juanito', '1000000809', 'Alimaña', '$2y$10$yWl44LqJCGYUo9ZN.DUlIuQJJc4ekCFBwBj0ZyUKWEw6nIZT42NaS'),
-(7, 'carlost@test.com', 'Carlos', '1', 'Torres', '$2y$10$azUlyIia0tMiIaiTAQ.nM.YGfO6ctZUCkona2Bhprb/uIOC4kqlxK');
+(7, 'carlost@test.com', 'Carlos', '1', 'Torres', '$2y$10$azUlyIia0tMiIaiTAQ.nM.YGfO6ctZUCkona2Bhprb/uIOC4kqlxK'),
+(11, 'carlostorres@test.com', 'Carlos', '2', 'Torres', '$2y$10$5eJVHb/OE.PtDQx2pzhWF.7nF4/SZZA5G2GMChFYG1K0Wk03c47pG');
 
 --
 -- Indexes for dumped tables
@@ -323,7 +323,7 @@ ALTER TABLE `tramite`
 -- AUTO_INCREMENT for table `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `usuario_id` smallint(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `usuario_id` smallint(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- Constraints for dumped tables
