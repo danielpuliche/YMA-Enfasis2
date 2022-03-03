@@ -41,7 +41,6 @@ include("../../settings/db.php");
                                 <tr>
                                     <th>Solicitante</th>
                                     <th>Teléfono</th>
-                                    <th>Dirección</th>
                                     <th>Eps</th>
                                     <th>Régimen</th>
                                     <th>Especialidad</th>
@@ -71,7 +70,6 @@ include("../../settings/db.php");
                                     <tr>
                                         <td> <?php echo $tramite['nombres']; ?> <?php echo $tramite['apellidos']; ?> </td>
                                         <td> +57 <?php echo $tramite['telefono']; ?> </td>
-                                        <td> <?php echo $tramite['direccion']; ?> </td>
                                         <td> <?php echo $tramite['eps']; ?> </td>
                                         <td> <?php echo $tramite['regimen']; ?> </td>
                                         <td> <?php echo $tramite['especialidad']; ?> </td>
@@ -87,7 +85,6 @@ include("../../settings/db.php");
                                 <tr>
                                     <th>Solicitante</th>
                                     <th>Teléfono</th>
-                                    <th>Dirección</th>
                                     <th>Eps</th>
                                     <th>Régimen</th>
                                     <th>Especialidad</th>
@@ -119,8 +116,6 @@ include("../../settings/db.php");
                                     <th>Solicitante</th>
                                     <th>Teléfono</th>
                                     <th>Dirección</th>
-                                    <th>Eps</th>
-                                    <th>Régimen</th>
                                     <th>Medicamentos</th>
                                     <th>Fecha Entrega</th>
                                     <th>Precio</th>
@@ -149,8 +144,6 @@ include("../../settings/db.php");
                                         <td> <?php echo $tramite['nombres']; ?> <?php echo $tramite['apellidos']; ?> </td>
                                         <td> +57 <?php echo $tramite['telefono']; ?> </td>
                                         <td> <?php echo $tramite['direccion']; ?> </td>
-                                        <td> <?php echo $tramite['eps']; ?> </td>
-                                        <td> <?php echo $tramite['regimen']; ?> </td>
                                         <td> <?php echo $tramite['medicamentos']; ?> </td>
                                         <td> <?php echo $tramite['fecha_entrega']; ?> </td>
                                         <td> <?php echo $tramite['precio']; ?> </td>
@@ -165,8 +158,6 @@ include("../../settings/db.php");
                                     <th>Solicitante</th>
                                     <th>Teléfono</th>
                                     <th>Dirección</th>
-                                    <th>Eps</th>
-                                    <th>Régimen</th>
                                     <th>Medicamentos</th>
                                     <th>Fecha Entrega</th>
                                     <th>Precio</th>

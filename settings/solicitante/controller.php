@@ -28,7 +28,7 @@ if (isset($_POST['signup_solicitante'])) {
         $sql = "SELECT usuario.usuario_id from usuario WHERE usuario.correo = '$correo'";
         $result = $connection->query($sql);
         $id_solicitante = $result->fetch_assoc()['usuario_id'];
-        $query = "INSERT INTO solicitante(`usuario_id`,`telefono`,`direccion`) VALUES ('$id_solicitante','$telefono','$direccion')";
+        $query = "INSERT INTO solicitante(`solicitante_id`,`telefono`,`direccion`) VALUES ('$id_solicitante','$telefono','$direccion')";
 
         //Ejecuta la consulta
         $resultado = mysqli_query($connection, $query);
@@ -41,18 +41,20 @@ if (isset($_POST['signup_solicitante'])) {
     }
 }
 
-//Controlador para crear trámite
+//Controlador para crear trámite cita médica
 if (isset($_POST['crear_cita'])) {
-
+    session_start();
     $solicitante_id = $_SESSION['usuario_id'];
     $eps = $_POST['eps'];
     $regimen = $_POST['regimen'];
-    $precio = $_POST['precio'];
+    $precio = $_POST['preciocita'];
     $estado_tramite = 'Espera';
-    $especialidad = $_POST['precio'];
-    $fecha_disponible = $_POST['fecha_disponible'];
+    $especialidad = $_POST['especialidad'];
+    $fecha_entrega = $_POST['fecha_entrega'];
+    $direccion_entrega = $_POST['direccion_entrega'];
+    $direccion_recogida = $_POST['direccion_recogida'];
 
-    $query = "INSERT INTO tramite(solicitante_id, eps, regimen, precio, estado_tramite) VALUES ($solicitante_id, $eps, $regimen, $precio, $estado_tramite)";
+    $query = "INSERT INTO tramite(solicitante_id, eps, regimen, precio, estado_tramite) VALUES ('$solicitante_id', '$eps', '$regimen', '$precio', '$estado_tramite')";
     
     //Ejecuta la consulta
     $resultado = mysqli_query($connection, $query);
@@ -60,12 +62,12 @@ if (isset($_POST['crear_cita'])) {
     if (!$resultado) {
         exit("Error");
     }else{
-        $query = "SELECT MAX(tramite_id) from tramite";
+        $query = "SELECT MAX(tramite_id) AS max_id from tramite";
         $result = mysqli_query($connection, $query);
-        $tramite_id = $result->fetch_assoc()['tramite_id'];
-        
-        $query = "INSERT INTO tramite_citamedica(tramite_citamedica_id, especialidad, fecha_disponible) VALUES ($tramite_id, $especialidad, $fecha_disponible)";        
-        $result = $connection->query($sql);
+        $result = $result->fetch_assoc();
+        $tramite_id = $result['max_id'];       
+        $query = "INSERT INTO tramite_citamedica(tramite_citamedica_id, especialidad, fecha_entrega) VALUES ('$tramite_id', '$especialidad', '$fecha_entrega')";        
+        $result = $connection->query($query);
         
         if (!$result) {
             exit("Error");
@@ -76,30 +78,37 @@ if (isset($_POST['crear_cita'])) {
     }
 }
 
+//Controlador para crear trámite medicamentos
+if (isset($_POST['crear_medicamentos'])) {
+    session_start();
+    $solicitante_id = $_SESSION['usuario_id'];
+    $eps = $_POST['eps'];
+    $regimen = $_POST['regimen'];
+    $precio = $_POST['preciomedicamentos'];
+    $estado_tramite = 'Espera';
+    $medicamentos = $_POST['medicamentos'];
+    $fecha_entrega = $_POST['fecha_entrega'];
 
-
-
-
-
-
-
-
-
-
-// Controlador para crear film
-if (isset($_POST['agregar-film'])) {
-        
-    $titulo = $_POST['titulo'];
-    $descripcion = $_POST['description'];
-    $year = $_POST['year'];
-    $lenguaje = $_POST['language'];
-    $duration = $_POST['duration'];
-    $query = "INSERT INTO film (title, description, release_year, language_id, rental_duration) VALUES ('$titulo', '$descripcion', $year ,$lenguaje, $duration)";
+    $query = "INSERT INTO tramite(solicitante_id, eps, regimen, precio, estado_tramite) VALUES ('$solicitante_id', '$eps', '$regimen', '$precio', '$estado_tramite')";
+    
     //Ejecuta la consulta
     $resultado = mysqli_query($connection, $query);
-    if(!$resultado){
-        header("Location: /views/read.php?mensaje=2");
+
+    if (!$resultado) {
+        exit("Error");
+    }else{
+        $query = "SELECT MAX(tramite_id) AS max_id from tramite";
+        $result = mysqli_query($connection, $query);
+        $result = $result->fetch_assoc();
+        $tramite_id = $result['max_id'];       
+        $query = "INSERT INTO tramite_citamedica(tramite_citamedica_id, especialidad, fecha_entrega) VALUES ('$tramite_id', '$especialidad', '$fecha_entrega')";        
+        $result = $connection->query($query);
+        
+        if (!$result) {
+            exit("Error");
+        }else{
+            //Con este comando retorna al login
+            header("Location: ../../views/solicitante/historialTramites.php");
+        }
     }
-    //Con este comando retorna a la página principal y muestra los datos
-    header("Location: /views/read.php?mensaje=1");
 }

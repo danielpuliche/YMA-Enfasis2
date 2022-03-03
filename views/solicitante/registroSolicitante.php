@@ -79,7 +79,7 @@ if(isset($_GET['cerrar_sesion'])){
                 <p class="login-box-msg">Registrarse - Solicitante</p>
                 <br>
 
-                <form action="../settings/controller.php" id="signup-solicitante" method="post">
+                <form action="/settings/solicitante/controller.php" id="signup-solicitante" method="post">
 
                     <div class="input-group mb-3">
                         <input type="text" class="form-control" name="names" placeholder="Nombres" required>

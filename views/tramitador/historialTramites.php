@@ -41,11 +41,9 @@ include("../../settings/db.php");
                             <tr>
                                 <th>Solicitante</th>
                                 <th>Teléfono</th>
-                                <th>Dirección</th>
                                 <th>Eps</th>
                                 <th>Régimen</th>
                                 <th>Especialidad</th>
-                                <th>Fecha disponible</th>
                                 <th>Precio</th>
                                 <th>Documentos</th>
                                 <th>Estado</th>
@@ -71,11 +69,9 @@ include("../../settings/db.php");
                                 <tr>
                                     <td> <?php echo $tramite['nombres']; ?> <?php echo $tramite['apellidos']; ?> </td>
                                     <td> +57 <?php echo $tramite['telefono']; ?> </td>
-                                    <td> <?php echo $tramite['direccion']; ?> </td>
                                     <td> <?php echo $tramite['eps']; ?> </td>
                                     <td> <?php echo $tramite['regimen']; ?> </td>
                                     <td> <?php echo $tramite['especialidad']; ?> </td>
-                                    <td> <?php echo $tramite['fecha_disponible']; ?> </td>
                                     <td> <?php echo $tramite['precio']; ?> </td>
                                     <td> <a href="https://file-examples-com.github.io/uploads/2017/10/file-sample_150kB.pdf" target="_blank">Ver aquí</a> </td>
                                     <td> <?php echo $tramite['estado_tramite']; ?> </td>
@@ -87,11 +83,9 @@ include("../../settings/db.php");
                             <tr>
                                 <th>Solicitante</th>
                                 <th>Teléfono</th>
-                                <th>Dirección</th>
                                 <th>Eps</th>
                                 <th>Régimen</th>
                                 <th>Especialidad</th>
-                                <th>Fecha disponible</th>
                                 <th>Precio</th>
                                 <th>Documentos</th>
                                 <th>Estado</th>
@@ -117,11 +111,9 @@ include("../../settings/db.php");
                             <tr>
                                 <th>Solicitante</th>
                                 <th>Teléfono</th>
-                                <th>Dirección</th>
                                 <th>Eps</th>
                                 <th>Régimen</th>
                                 <th>Medicamentos</th>
-                                <th>Fecha Entrega</th>
                                 <th>Precio</th>
                                 <th>Documentos</th>
                                 <th>Estado</th>
@@ -147,11 +139,9 @@ include("../../settings/db.php");
                                 <tr>
                                     <td> <?php echo $tramite['nombres']; ?> <?php echo $tramite['apellidos']; ?> </td>
                                     <td> +57 <?php echo $tramite['telefono']; ?> </td>
-                                    <td> <?php echo $tramite['direccion']; ?> </td>
                                     <td> <?php echo $tramite['eps']; ?> </td>
                                     <td> <?php echo $tramite['regimen']; ?> </td>
                                     <td> <?php echo $tramite['medicamentos']; ?> </td>
-                                    <td> <?php echo $tramite['fecha_entrega']; ?> </td>
                                     <td> <?php echo $tramite['precio']; ?> </td>
                                     <td> <a href="https://file-examples-com.github.io/uploads/2017/10/file-sample_150kB.pdf" target="_blank">Ver aquí</a> </td>
                                     <td> <?php echo $tramite['estado_tramite']; ?> </td>
@@ -163,11 +153,9 @@ include("../../settings/db.php");
                             <tr>
                                 <th>Solicitante</th>
                                 <th>Teléfono</th>
-                                <th>Dirección</th>
                                 <th>Eps</th>
                                 <th>Régimen</th>
                                 <th>Medicamentos</th>
-                                <th>Fecha Entrega</th>
                                 <th>Precio</th>
                                 <th>Documentos</th>
                                 <th>Estado</th>

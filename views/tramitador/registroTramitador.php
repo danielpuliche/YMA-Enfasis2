@@ -79,7 +79,7 @@ if(isset($_GET['cerrar_sesion'])){
                 <p class="login-box-msg">Registrarse - Tramitador</p>
                 <br>
 
-                <form action="../settings/controller.php" id="signup-tramitador" method="post">
+                <form action="/settings/tramitador/controller.php" id="signup-tramitador" method="post">
 
                     <div class="input-group mb-3">
                         <input type="text" class="form-control" name="names" placeholder="Nombres" required>

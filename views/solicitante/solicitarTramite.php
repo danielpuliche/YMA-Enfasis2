@@ -122,8 +122,8 @@ include('../../settings/db.php');
                         </div>
 
                         <div class="form-group col-md-6">
-                            <label for="inputEmail4">EPS</label>
-                            <input type="date" class="form-control" value="2017-06-01">
+                            <label for="fecha_disponible">Fecha disponible</label>
+                            <input type="date" class="form-control" name="fecha_disponible">
                         </div>
 
                     </div>
@@ -212,9 +212,13 @@ include('../../settings/db.php');
                     </div>
 
                     <div class="form-row">
-                        <div class="form-group col-12">
+                        <div class="form-group col-6">
                             <label for="exampleFormControlTextarea1">Medicamentos</label>
                             <textarea class="form-control" name="medicamentos" rows="1" required></textarea>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="fecha_entrega">Fecha entrega</label>
+                            <input type="date" class="form-control" name="fecha_entrega">
                         </div>
                     </div>
 
