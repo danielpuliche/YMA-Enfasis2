@@ -21,10 +21,10 @@
         <div class="login-logo">
             <a href="#"><b>YMA</b><br>Your Medical Assistant</a>
         </div>
-        <!-- /.login-logo -->
+        <!-- /.login-logo what-->
         <div class="card">
             <div class="card-body login-card-body login">
-                <p class="login-box-msg">Iniciar Sesión</p>
+                <p class="login-box-msg">Yo no se</p>
 
                 <form action="../settings/controller.php" id="login" method="post">
 
