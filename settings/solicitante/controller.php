@@ -71,7 +71,7 @@ if (isset($_POST['crear_cita'])) {
         if (!$result) {
             exit("Error");
         }else{
-            //Con este comando retorna al login
+            //Con este comando retorna a trámites en proceso
             header("Location: ../../views/solicitante/historialTramites.php");
         }
     }
