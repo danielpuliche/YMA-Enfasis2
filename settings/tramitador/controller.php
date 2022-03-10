@@ -53,7 +53,7 @@ if (isset($_POST['negociar'])) {
     $precio = $_POST['precio'];
     $query = "UPDATE tramite t SET t.tramitador_id='$tramitador_id', t.precio='$precio', t.estado_tramite='Negociacion' WHERE t.tramite_id='$tramite_id'";
     //Ejecuta la consulta
-    
+
     try {
         $resultado = mysqli_query($connection, $query);
     } catch (Exception) {
