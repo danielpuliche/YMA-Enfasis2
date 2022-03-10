@@ -1641,7 +1641,7 @@ input[type="radio"] .styled:checked+label::after {
 	height: auto;
 	display: flex;
 	flex-direction: row;
-	padding: 0px 0px;
+	padding: 10px 0px;
 
 }
 
@@ -1649,10 +1649,10 @@ input[type="radio"] .styled:checked+label::after {
 	padding-top: 0;
 }
 .logo a {
-	font-size: 10px;
+	font-size: 0px;
 	padding: 0;
 	margin: 0;
-	color: rgb(255, 255, 255);
+	color: rgb(228, 229, 235);
 
 }
 

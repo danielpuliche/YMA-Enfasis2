@@ -45,7 +45,7 @@ if (isset($_GET['cerrar_sesion'])) {
                margin: 0 auto;">
    <!-- loader  -->
    <div class="loader_bg">
-      <div class="loader"><img src="static/img/loading.gif" alt="#" /></div>
+      <div class="loader  bg-danger"><img src="static/img/loading.gif" alt="#" /></div>
    </div>
    <!-- end loader -->
    <!-- header -->
@@ -54,14 +54,14 @@ if (isset($_GET['cerrar_sesion'])) {
       <div class="bg">
          <div class="container-fluid">
             <div class="row">
-               <div class="col-7">
+               <div class="col-xl-7 col-lg-7 col-md-6 col-sm-6">
                   <div class="center-desk">
                      <div class="logo"> <a COLOR="white" class="inicio" href="#"><FONT SIZE=6>YMA</FONT></a> </div>
                   </div>
                </div>
-               <div class="col-5 align-items-left-">
-                  <div class="row bg-danger py-3">
-                     <div class="col-5 col-md-4 px-4">
+               <div class="col-xl-5 col-lg-5 col-md-5 col-sm-5">
+                  <div class="row py-3">
+                     <div class="col-5 col-md-4  px-4">
                         <a class="sesion text-center" style="color:#FFFFFF;" href="views/solicitante/registroSolicitante.php"><FONT SIZE=2>¿Solicitante nuevo?</FONT></a>
                      </div>
                      <div class="col-5 col-md-4 px-4">
@@ -75,7 +75,7 @@ if (isset($_GET['cerrar_sesion'])) {
          </div>
       </div>
          <!-- end header inner -->
-   </header>
+   </header >
    <!-- end header -->
    <section class="slider_section">
       <div id="myCarousel" class="carousel slide banner-main" data-ride="carousel">
@@ -136,7 +136,7 @@ if (isset($_GET['cerrar_sesion'])) {
    </section>
 
    <!-- about  -->
-   <div id="about" class="center">
+   <div id="about" class="center ">
       <div class="py-5"></div>
       <div class="container-fluid">
          <div class="row-xl-10 py-5">
@@ -225,8 +225,8 @@ if (isset($_GET['cerrar_sesion'])) {
    </div>
    <!-- end abouts -->
 
-   <!-- about  -->
-   <div id="about" class="center">
+   <!-- about  --> 
+   <div id="about" class="center  bg-danger" >
       <div class="container-fluid">
          <div class="row-xl-10 py-5">
             <div class="col-md-12">
@@ -261,7 +261,7 @@ if (isset($_GET['cerrar_sesion'])) {
 
    <!-- about  -->
    <div class="bg">
-      <div class="container-fluid" style="background-color:##281e5d;">
+      <div class="container-fluid">
          <div class="row py-5 px-2">
             <div class="col-1"></div>
             <div class="col-2 px-6" style="color:#FFFFFF;">
