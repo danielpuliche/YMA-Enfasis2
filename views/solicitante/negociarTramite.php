@@ -134,7 +134,7 @@ include('../../settings/db.php');
                 confirmButtonText: 'Si, borrar!'
             }).then((result) => {
                 if (result.isConfirmed) {
-                    $(location).prop('href', `/settings/controller.php?id=${id}`)
+                    $(location).prop('href', `/settings/solicitante/controller.php?id=${id}`)
                 }
             });
         });

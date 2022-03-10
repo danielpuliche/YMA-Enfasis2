@@ -75,12 +75,10 @@ if (isset($_POST['crear_cita'])) {
         $query = "INSERT INTO tramite_citamedica(tramite_citamedica_id, especialidad, fecha_disponible) VALUES ('$tramite_id', '$especialidad', '$fecha_disponible')";
         $result = $connection->query($query);
 
-        if (!$result) {
-            exit("Error");
-        } else {
-            //Con este comando retorna a trámites en proceso
-            header("Location: ../../views/solicitante/historialTramites.php");
+        if (!$resultado) {
+            header("Location: /views/solicitante/solicitanteMain.php?mensaje=1");
         }
+        header("Location: /views/solicitante/solicitanteMain.php?mensaje=2");
     }
 }
 
@@ -145,11 +143,12 @@ if (isset($_POST['negociar'])) {
 // Controlador para rechazar 
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
-    $query = "UPDATE tramite t SET t.estado_tramite='Espera' WHERE t.tramite_id=$id";
+    echo $id;
+    $query = "UPDATE tramite t SET t.estado_tramite='Espera', t.tramitador_id=NULL WHERE t.tramite_id=$id";
     $resultado = mysqli_query($connection, $query);
 
-    // if (!$resultado) {
-    //     header("Location: /views/solicitante/solicitanteMain.php?mensaje=6");
-    // }
-    // header("Location: /views/solicitante/solicitanteMain.php?mensaje=5");
+    if (!$resultado) {
+        header("Location: /views/solicitante/solicitanteMain.php?mensaje=6");
+    }
+    header("Location: /views/solicitante/solicitanteMain.php?mensaje=5");
 }
