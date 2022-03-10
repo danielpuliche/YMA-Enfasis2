@@ -47,7 +47,7 @@ if (isset($_GET['cerrar_sesion'])) {
                margin: 0 auto;">
    <!-- loader  -->
    <div class="loader_bg">
-      <div class="loader  bg-danger"><img src="static/img/loading.gif" alt="#" /></div>
+      <div class="loader"><img src="static/img/loading.gif" alt="#" /></div>
    </div>
    <!-- end loader -->
    <!-- header -->
@@ -58,7 +58,7 @@ if (isset($_GET['cerrar_sesion'])) {
             <div class="row">
                <div class="col-xl-7 col-lg-7 col-md-6 col-sm-6">
                   <div class="center-desk">
-                     <div class="logo"> <a COLOR="white" class="inicio" href="#"><FONT SIZE=6>YMA</FONT></a> </div>
+                     <div> <a style="color:#FFFFFF;" class="inicio" href="#"><FONT SIZE=6>YMA</FONT></a> </div>
                   </div>
                </div>
                <div class="col-xl-5 col-lg-5 col-md-5 col-sm-5">
