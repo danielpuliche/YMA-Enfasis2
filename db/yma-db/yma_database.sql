@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Mar 03, 2022 at 09:16 AM
+-- Generation Time: Mar 10, 2022 at 01:34 PM
 -- Server version: 5.7.33
 -- PHP Version: 8.1.2
 
@@ -88,10 +88,11 @@ DROP TABLE IF EXISTS `tramite`;
 CREATE TABLE `tramite` (
   `tramite_id` smallint(5) UNSIGNED NOT NULL,
   `solicitante_id` smallint(5) UNSIGNED NOT NULL,
-  `tramitador_id` smallint(5) UNSIGNED,
+  `tramitador_id` smallint(5) UNSIGNED DEFAULT NULL,
   `eps` varchar(20) DEFAULT NULL,
   `regimen` enum('Contributivo','Subsidiado') DEFAULT NULL,
   `precio` double DEFAULT NULL,
+  `precio_ini` double DEFAULT NULL,
   `estado_tramite` enum('Espera','Negociacion','Proceso','Finalizado') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -99,49 +100,55 @@ CREATE TABLE `tramite` (
 -- Dumping data for table `tramite`
 --
 
-INSERT INTO `tramite` (`tramite_id`, `solicitante_id`, `tramitador_id`, `eps`, `regimen`, `precio`, `estado_tramite`) VALUES
-(1, 2, 3, 'Sanitas', 'Contributivo', 5000, 'Negociacion'),
-(2, 4, 3, 'Nueva EPS', 'Contributivo', 8000, 'Proceso'),
-(3, 4, 1, 'Sanitas', 'Subsidiado', 5000, 'Finalizado'),
-(4, 2, 3, 'Sanitas', 'Contributivo', 5000, 'Proceso'),
-(5, 2, 3, 'Sanitas', 'Contributivo', 9000, 'Finalizado'),
-(6, 7, 1, 'Emmsanar', 'Subsidiado', 5000, 'Finalizado'),
-(7, 7, 1, 'Sanitas', 'Contributivo', 10000, 'Finalizado'),
-(8, 7, 3, 'Emmsanar', 'Contributivo', 5000, 'Finalizado'),
-(9, 2, 3, 'Sanitas', 'Contributivo', 5000, 'Proceso'),
-(10, 2, 3, 'Sanitas', 'Contributivo', 5000, 'Negociacion'),
-(11, 2, 3, 'Sanitas', 'Contributivo', 5000, 'Proceso'),
-(12, 4, 3, 'Nueva EPS', 'Contributivo', 8000, 'Proceso'),
-(13, 4, 1, 'Sanitas', 'Subsidiado', 5000, 'Proceso'),
-(14, 2, 3, 'Sanitas', 'Contributivo', 5000, 'Proceso'),
-(15, 2, 3, 'Sanitas', 'Contributivo', 9000, 'Finalizado'),
-(16, 7, 1, 'Emmsanar', 'Subsidiado', 5000, 'Finalizado'),
-(17, 7, 1, 'Sanitas', 'Contributivo', 10000, 'Finalizado'),
-(18, 7, 3, 'Emmsanar', 'Contributivo', 5000, 'Negociacion'),
-(19, 2, 3, 'Sanitas', 'Contributivo', 5000, 'Proceso'),
-(20, 2, 3, 'Sanitas', 'Contributivo', 5000, 'Proceso'),
-(21, 2, 3, 'Sanitas', 'Contributivo', 5000, 'Finalizado'),
-(22, 2, 3, 'Sanitas', 'Contributivo', 5000, 'Proceso'),
-(23, 4, 3, 'Nueva EPS', 'Contributivo', 8000, 'Negociacion'),
-(24, 4, 1, 'Sanitas', 'Subsidiado', 5000, 'Proceso'),
-(25, 2, 3, 'Sanitas', 'Contributivo', 5000, 'Negociacion'),
-(26, 2, 3, 'Sanitas', 'Contributivo', 9000, 'Negociacion'),
-(27, 7, 1, 'Emmsanar', 'Subsidiado', 5000, 'Finalizado'),
-(28, 7, 1, 'Sanitas', 'Contributivo', 10000, 'Finalizado'),
-(29, 7, 3, 'Emmsanar', 'Contributivo', 5000, 'Finalizado'),
-(30, 2, 3, 'Sanitas', 'Contributivo', 5000, 'Proceso'),
-(31, 2, 3, 'Sanitas', 'Contributivo', 5000, 'Finalizado'),
-(32, 2, 3, 'Sanitas', 'Contributivo', 5000, 'Proceso'),
-(33, 4, 3, 'Nueva EPS', 'Contributivo', 8000, 'Negociacion'),
-(34, 4, 1, 'Sanitas', 'Subsidiado', 5000, 'Proceso'),
-(35, 2, 3, 'Sanitas', 'Contributivo', 5000, 'Finalizado'),
-(36, 2, 3, 'Sanitas', 'Contributivo', 9000, 'Finalizado'),
-(37, 7, 1, 'Emmsanar', 'Subsidiado', 5000, 'Finalizado'),
-(38, 7, 1, 'Sanitas', 'Contributivo', 10000, 'Finalizado'),
-(39, 7, 3, 'Emmsanar', 'Contributivo', 5000, 'Finalizado'),
-(40, 2, 3, 'Sanitas', 'Contributivo', 5000, 'Proceso'),
-(41, 2, 3, 'Sanitas', 'Contributivo', 5000, 'Proceso'),
-(42, 2, 3, 'Sanitas', 'Contributivo', 5000, 'Proceso');
+INSERT INTO `tramite` (`tramite_id`, `solicitante_id`, `tramitador_id`, `eps`, `regimen`, `precio`, `precio_ini`, `estado_tramite`) VALUES
+(1, 2, 3, 'Sanitas', 'Contributivo', 5000, NULL, 'Negociacion'),
+(2, 4, 3, 'Nueva EPS', 'Contributivo', 8000, NULL, 'Proceso'),
+(3, 4, 1, 'Sanitas', 'Subsidiado', 5000, NULL, 'Finalizado'),
+(4, 2, 3, 'Sanitas', 'Contributivo', 5000, NULL, 'Proceso'),
+(5, 2, 3, 'Sanitas', 'Contributivo', 9000, NULL, 'Finalizado'),
+(6, 7, 1, 'Emmsanar', 'Subsidiado', 5000, NULL, 'Finalizado'),
+(7, 7, 1, 'Sanitas', 'Contributivo', 10000, NULL, 'Finalizado'),
+(8, 7, 3, 'Emmsanar', 'Contributivo', 5000, NULL, 'Finalizado'),
+(9, 2, 3, 'Sanitas', 'Contributivo', 5000, NULL, 'Proceso'),
+(10, 2, 3, 'Sanitas', 'Contributivo', 5000, NULL, 'Negociacion'),
+(11, 2, 3, 'Sanitas', 'Contributivo', 5000, NULL, 'Proceso'),
+(12, 4, 3, 'Nueva EPS', 'Contributivo', 8000, NULL, 'Proceso'),
+(13, 4, 1, 'Sanitas', 'Subsidiado', 5000, NULL, 'Proceso'),
+(14, 2, 3, 'Sanitas', 'Contributivo', 5000, NULL, 'Proceso'),
+(15, 2, 3, 'Sanitas', 'Contributivo', 9000, NULL, 'Finalizado'),
+(16, 7, 1, 'Emmsanar', 'Subsidiado', 5000, NULL, 'Finalizado'),
+(17, 7, 1, 'Sanitas', 'Contributivo', 10000, NULL, 'Finalizado'),
+(18, 7, 3, 'Emmsanar', 'Contributivo', 5000, NULL, 'Negociacion'),
+(19, 2, 3, 'Sanitas', 'Contributivo', 5000, NULL, 'Proceso'),
+(20, 2, 3, 'Sanitas', 'Contributivo', 5000, NULL, 'Proceso'),
+(21, 2, 3, 'Sanitas', 'Contributivo', 5000, NULL, 'Finalizado'),
+(22, 2, 3, 'Sanitas', 'Contributivo', 5000, NULL, 'Proceso'),
+(23, 4, 3, 'Nueva EPS', 'Contributivo', 8000, NULL, 'Proceso'),
+(24, 4, 1, 'Sanitas', 'Subsidiado', 5000, NULL, 'Proceso'),
+(25, 2, 3, 'Sanitas', 'Contributivo', 5000, NULL, 'Negociacion'),
+(26, 2, 3, 'Sanitas', 'Contributivo', 9000, NULL, 'Negociacion'),
+(27, 7, 1, 'Emmsanar', 'Subsidiado', 5000, NULL, 'Finalizado'),
+(28, 7, 1, 'Sanitas', 'Contributivo', 10000, NULL, 'Finalizado'),
+(29, 7, 3, 'Emmsanar', 'Contributivo', 5000, NULL, 'Finalizado'),
+(30, 2, 3, 'Sanitas', 'Contributivo', 5000, NULL, 'Proceso'),
+(31, 2, 3, 'Sanitas', 'Contributivo', 5000, NULL, 'Finalizado'),
+(32, 2, 3, 'Sanitas', 'Contributivo', 5000, NULL, 'Proceso'),
+(33, 4, 3, 'Nueva EPS', 'Contributivo', 8000, NULL, 'Proceso'),
+(34, 4, 1, 'Sanitas', 'Subsidiado', 5000, NULL, 'Proceso'),
+(35, 2, 3, 'Sanitas', 'Contributivo', 5000, NULL, 'Finalizado'),
+(36, 2, 3, 'Sanitas', 'Contributivo', 9000, NULL, 'Finalizado'),
+(37, 7, 1, 'Emmsanar', 'Subsidiado', 5000, NULL, 'Finalizado'),
+(38, 7, 1, 'Sanitas', 'Contributivo', 10000, NULL, 'Finalizado'),
+(39, 7, 3, 'Emmsanar', 'Contributivo', 5000, NULL, 'Finalizado'),
+(40, 2, 3, 'Sanitas', 'Contributivo', 5000, NULL, 'Proceso'),
+(41, 2, 3, 'Sanitas', 'Contributivo', 5000, NULL, 'Proceso'),
+(42, 2, 3, 'Sanitas', 'Contributivo', 5000, NULL, 'Proceso'),
+(43, 4, 3, 'Sanitas', 'Subsidiado', 11000, NULL, 'Proceso'),
+(44, 4, 3, 'Sanitas', 'Subsidiado', 7000, NULL, 'Proceso'),
+(45, 4, 3, 'Coomeva', 'Subsidiado', 8000, NULL, 'Proceso'),
+(46, 4, NULL, 'Coomeva', 'Contributivo', 8500, 8500, 'Espera'),
+(47, 4, 3, 'Coomeva', 'Contributivo', 10000, 7000, 'Proceso'),
+(48, 4, 3, 'Nueva EPS', 'Subsidiado', 8000, 7000, 'Proceso');
 
 -- --------------------------------------------------------
 
@@ -181,7 +188,12 @@ INSERT INTO `tramite_citamedica` (`tramite_citamedica_id`, `especialidad`, `fech
 (18, 'Hepatología', '2022-03-01'),
 (19, 'Nutriología', '2022-03-01'),
 (20, 'Pediatría', '2022-03-01'),
-(21, 'Reumatología', '2022-03-01');
+(21, 'Reumatología', '2022-03-01'),
+(43, 'Neurología', '2022-03-18'),
+(44, 'Reumatología', '2022-03-25'),
+(45, 'Medicina física y rehabilitación', '2022-04-02'),
+(47, 'Medicina del deporte', '2022-03-04'),
+(48, 'Genética', '2022-03-19');
 
 -- --------------------------------------------------------
 
@@ -223,7 +235,8 @@ INSERT INTO `tramite_medicamentos` (`tramite_medicamentos_id`, `medicamentos`, `
 (39, 'Acetaminofen', 'Calle 72 D Nte # 5F Este - 09', 'Carrera 9 # 7-77', '2022-03-01'),
 (40, 'Aspirina', 'Carrera 9 # 7-77', 'Calle 72 D Nte # 5F Este - 09', '2022-03-01'),
 (41, 'Ibuprofeno', 'Calle 72 D Nte # 5F Este - 09', 'Carrera 9 # 7-77', '2022-03-01'),
-(42, 'Acetaminofen', 'Carrera 9 # 7-77', 'Calle 72 D Nte # 5F Este - 09', '2022-03-01');
+(42, 'Acetaminofen', 'Carrera 9 # 7-77', 'Calle 72 D Nte # 5F Este - 09', '2022-03-01'),
+(46, 'Ibuprofeno', 'Calle 2', 'Carrera 5', '2022-03-30');
 
 -- --------------------------------------------------------
 
@@ -317,7 +330,7 @@ ALTER TABLE `documento`
 -- AUTO_INCREMENT for table `tramite`
 --
 ALTER TABLE `tramite`
-  MODIFY `tramite_id` smallint(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
+  MODIFY `tramite_id` smallint(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
 
 --
 -- AUTO_INCREMENT for table `usuario`
