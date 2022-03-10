@@ -54,7 +54,7 @@ include("../../settings/db.php");
                                     $conn = mysqli_connect($host, $user, $pw, $db);
                                     $conn->set_charset("utf8");
                                     $id = $_SESSION['usuario_id'];
-                                    $sql = "SELECT u.nombres, u.apellidos, s.telefono, s.direccion, t.eps, t.regimen, tm.especialidad, tm.fecha_disponible, t.precio, t.estado_tramite FROM tramite t
+                                    $sql = "SELECT t.tramite_id, u.nombres, u.apellidos, s.telefono, s.direccion, t.eps, t.regimen, tm.especialidad, tm.fecha_disponible, t.precio, t.estado_tramite FROM tramite t
                                     INNER JOIN usuario u ON u.usuario_id=t.solicitante_id INNER JOIN solicitante s ON s.solicitante_id=t.solicitante_id
                                     INNER JOIN tramite_citamedica tm ON tm.tramite_citamedica_id=t.tramite_id
                                     WHERE t.tramitador_id=$id AND (t.estado_tramite='Negociacion' OR t.estado_tramite='Proceso')";
@@ -73,10 +73,9 @@ include("../../settings/db.php");
                                         <td> <?php echo $tramite['fecha_disponible']; ?> </td>
                                         <td> <?php echo $tramite['precio']; ?> </td>
                                         <td>
-                                            <!-- <a href="edit.php?id=<?php echo $tramite['tramite_id']; ?>" class="btn bg-primary btn-flat margin rounded">
+                                            <a href="edit.php?id=<?php echo $tramite['tramite_id']; ?>" class="btn bg-primary btn-flat margin rounded">
                                                 Elegir
-                                            </a> -->
-                                            
+                                            </a>
                                         </td>
                                     </tr>
 
