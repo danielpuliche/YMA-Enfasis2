@@ -15,17 +15,28 @@
     <!-- Theme style -->
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/admin-lte@3.2/dist/css/adminlte.min.css">
-
+    <style>
+        body {
+            height: 800px;
+            background-image: url("http://localhost/YMA-Enfasis2/static/img/tramitadores.jpg");
+            background-size: cover;
+            background-size: 100rem;
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-attachment: fixed;
+        }
+    </style>
 </head>
 
 <body class="hold-transition login-page">
-    <div class="login-box">
+
+    <div class="login-box p-5 " style="background-color:#FFFFFF;">
         <div class="login-logo">
-            <a href="#"><b>YMA</b><br>Your Medical Assistant</a>
+            <a href="#"><b><FONT SIZE=7 COLOR="black" WEIGHT="bold">YMA</FONT></strong></h1></b><br><FONT SIZE=4 COLOR="black" WEIGHT="bold">Your Medical Assistant</FONT></strong></h1></a>
         </div>
         <!-- /.login-logo what-->
         <div class="card">
-            <div class="card-body login-card-body login">
+            <div class="card-body login-card-body loginc pt-5">
                 <p class="login-box-msg">Inicio sesión</p>
 
                 <form action="../settings/controller.php" id="login" method="post">

@@ -31,6 +31,18 @@ if (isset($_GET['cerrar_sesion'])) {
     <!-- Validar inputs -->
     <script src="/static/js/validarInputs.js"></script>
 
+    <style>
+        body {
+            height: 800px;
+            background-image: url("http://localhost/YMA-Enfasis2/static/img/Medico.jpg");
+            background-size: cover;
+            background-size: 100rem;
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-attachment: fixed;
+        }
+    </style>
+
 </head>
 
 <body class="hold-transition login-page">
@@ -84,10 +96,12 @@ if (isset($_GET['cerrar_sesion'])) {
     ?>
 
     <!-- Fin de alertas -->
-
-    <div class="login-box">
+    <div class="p-5">
+        </br></br></br></br></br></br>
+    </div>
+    <div class="login-box p-5" style="background-color:#FFFFFF;">
         <div class="login-logo">
-            <a href="#"><b>YMA</b><br>Your Medical Assistant</a>
+            <a href="#"><b><FONT SIZE=7 COLOR="black" WEIGHT="bold">YMA</FONT></strong></h1></b><br><FONT SIZE=4 COLOR="black" WEIGHT="bold">Your Medical Assistant</FONT></strong></h1></a>
         </div>
         <!-- /.login-logo -->
         <div class="card">
@@ -182,6 +196,8 @@ if (isset($_GET['cerrar_sesion'])) {
             <!-- /.login-card-body -->
         </div>
     </div>
+
+    
     <!-- /.login-box -->
 
     <!-- jQuery -->
