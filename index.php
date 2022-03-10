@@ -45,7 +45,7 @@ if (isset($_GET['cerrar_sesion'])) {
       style="  min-height: 100vh;
                max-width: 100%;
                margin: 0 auto;">
-   <!-- loader  --> 
+   <!-- loader  -->
    <div class="loader_bg">
       <div class="loader"><img src="static/img/loading.gif" alt="#" /></div>
    </div>
@@ -72,7 +72,6 @@ if (isset($_GET['cerrar_sesion'])) {
                      <div class="col-2 col-md-4">
                         <a class="sesion text-center" style="color:#FFFFFF;" href="views\login.php"><FONT SIZE=2>Iniciar Sesión</FONT></a>
                      </div>
-                  </div>
                </div>
             </div>
          </div>
@@ -157,8 +156,8 @@ if (isset($_GET['cerrar_sesion'])) {
                   <figure><img src="static/img/Slide.png" width="800" alt="img" align="left"/></figure>
                </div>
             </div>   
-            <div class="col-xl-5 row pt-5">
-               <div class="indentacion right col-md-12 pt-5">      
+            <div class="col-xl-5 row">
+               <div class="indentacion right col-md-12">      
                      <aside>El proyecto YMA de la Universidad del Cauca, consiste en un sistema que permite la conexión entre solicitantes
                      y tramitadores, esto con el find de lograr una mayor facilidad a la hora de realizar tus trámites médicos
                      desde la comodidad de tu hogar, a la vez que ayuda a generar empleos y fomentar el mejoramiento de los sistemas de la salud.</aside>
@@ -198,13 +197,13 @@ if (isset($_GET['cerrar_sesion'])) {
                   <ul>Se genera<i> comodidad </i> y se <i> impulsa el empleo y desarrollo del país </i> .</ul>
                </div>
                <div class="img-box py-5">
-                  <a href="views/solicitante/registroSolicitante.php">Crea Cita</a>
+               <a href="views/solicitante/registroSolicitante.php">Crea Cita</a>
                </div>
             </div>
          </div>
          <div class="row py-5">
-            <div class="py-5" VSPACE="50"></div>
-            <div class="py-5" VSPACE="50"></div>
+         <div class="py-5" VSPACE="50"></div>
+         <div class="py-5" VSPACE="50"></div>
             <div class="col-xl-7 noticia">
                <div class="img-box">
                   <figure><img src="static/img/farmacia.jpg" width="670" alt="img" align="center"/></figure>
@@ -214,13 +213,12 @@ if (isset($_GET['cerrar_sesion'])) {
                <div class="indentacion right col-md-12 text-center py-5">   
                   <h1><strong>
                      <FONT SIZE=5 COLOR="black" WEIGHT="bold">Reclamo de Medicamentos</FONT></strong></h1>   
-               </div>
                <div class="indentacion right col-md-12 text-left py-3">     
                   <ul>Se brinda la oportunidad de tener un tramitador al alcance de tu mano, o de convertirte en uno!</u>
                   <ul>Se genera<i> comodidad </i> y se <i> impulsa el empleo y desarrollo del país </i> .</ul>
                </div>
                <div class="img-box py-5">
-                  <a href="views/solicitante/registroSolicitante.php">Solicita Medicamentos</a>
+               <a href="views/solicitante/registroSolicitante.php">Solicita Medicamentos</a>
                </div>
             </div>
          </div>
@@ -230,7 +228,7 @@ if (isset($_GET['cerrar_sesion'])) {
    <!-- end abouts -->
 
    <!-- about  --> 
-   <div id="about" class="center" >
+   <div id="about" class="center  bg-danger" >
       <div class="container-fluid">
          <div class="row-xl-10 py-5">
             <div class="col-md-12">
@@ -247,9 +245,9 @@ if (isset($_GET['cerrar_sesion'])) {
                   <figure><img src="static/img/collage.png" width="700" alt="img" align="center"/></figure>
                </div>
             </div>   
-            <div class="col-xl-5 row pt-5">
-               <div class="indentacion right col-md-12 pt-5">      
-                     <aside><br>Somos un grupo de cuatro (4) estudiantes de octavo semestre de la Universidad del Cauca,
+            <div class="col-xl-5 row">
+               <div class="indentacion right col-md-12">      
+                     <aside>Somos un grupo de cuatro (4) estudiantes de octavo semestre de la Universidad del Cauca,
                      con el objetivo de crear un proyecto que suministre a los ciudadanos la oportunidad de tener 
                      un tramitador al alcance de su mano, o de convertirte en uno!. De esta forma se genera<i> comodidad </i>
                      y se <i> impulsa el empleo y desarrollo del país </i> .</aside>
@@ -261,14 +259,14 @@ if (isset($_GET['cerrar_sesion'])) {
 
    <!-- end abouts -->
 
-      <a type="button" class="text-center pt-3" href="#" style="background-color:#484295; min-height: 8vh; width: 100%; color:#FFFFFF;  vertical-align: middle; justify-content: center;">Inicio Página</a>
+      <a type="button" class="text-center" href="#" style="background-color:#484295; min-height: 8vh; width: 100%; color:#FFFFFF;  vertical-align: middle; justify-content: center;">Inicio Página</a>
 
    <!-- about  -->
-   <div class="bg py-5">
+   <div class="bg">
       <div class="container-fluid">
-         <div class="row py-5">
+         <div class="row py-5 px-2">
             <div class="col-1"></div>
-            <div class="col-2 px-4" style="color:#FFFFFF;">
+            <div class="col-2 px-6" style="color:#FFFFFF;">
                <ol>
                   <li><strong>Conócenos</strong></li>
                   <li>Segundo elemento de la lista</li>
@@ -294,7 +292,7 @@ if (isset($_GET['cerrar_sesion'])) {
                </ol>
             </div>
             <div class="col-3 px-5" style="color:#FFFFFF;">
-               <ol>
+            <ol>
                   <li><strong>Podemos Ayudarte</strong></li>
                   <li>Segundo elemento de la lista</li>
                   <li>Tercer elemento de la lista</li>
@@ -303,9 +301,6 @@ if (isset($_GET['cerrar_sesion'])) {
          </div>
       </div>
    </div>
-
-   <div class="bg py-5">
-   </div>  
    <!-- end abouts -->
 
    <!-- Javascript files-->
