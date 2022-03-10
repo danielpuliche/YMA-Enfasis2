@@ -4580,7 +4580,6 @@ textarea.form-control-lg {
 }
 
 .card-header {
-  padding: 0.5rem 1rem;
   margin-bottom: 0;
   background-color: rgba(0, 0, 0, 0.03);
   border-bottom: 1px solid rgba(0, 0, 0, 0.125);
@@ -5472,7 +5471,7 @@ textarea.form-control-lg {
 .toast-header {
   display: flex;
   align-items: center;
-  padding: 0.5rem 0.75rem;
+  padding: 0rem 0rem;
   color: #6c757d;
   background-color: rgba(255, 255, 255, 0.85);
   background-clip: padding-box;
@@ -5576,10 +5575,10 @@ textarea.form-control-lg {
   flex-shrink: 0;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem 1rem;
+  padding: 0rem 0rem;
   border-bottom: 1px solid #dee2e6;
-  border-top-left-radius: calc(0.3rem - 1px);
-  border-top-right-radius: calc(0.3rem - 1px);
+  border-top-left-radius: calc(0.3rem - 0.6px);
+  border-top-right-radius: calc(0.3rem - 0.6px);
 }
 .modal-header .btn-close {
   padding: 0.5rem 0.5rem;
@@ -5962,7 +5961,7 @@ textarea.form-control-lg {
   top: 0;
   left: 50%;
   display: block;
-  width: 1rem;
+  width: 0rem;
   margin-left: -0.5rem;
   content: "";
   border-bottom: 1px solid #f0f0f0;
@@ -5985,7 +5984,7 @@ textarea.form-control-lg {
 }
 
 .popover-header {
-  padding: 0.5rem 1rem;
+  padding: 0rem 0rem;
   margin-bottom: 0;
   font-size: 1rem;
   background-color: #f0f0f0;
@@ -6320,7 +6319,7 @@ textarea.form-control-lg {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem 1rem;
+  padding: 0rem 0rem;
 }
 .offcanvas-header .btn-close {
   padding: 0.5rem 0.5rem;

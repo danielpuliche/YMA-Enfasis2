@@ -1649,7 +1649,7 @@ input[type="radio"] .styled:checked+label::after {
 	padding-top: 0;
 }
 .logo a {
-	font-size: 70px;
+	font-size: 0px;
 	padding: 0;
 	margin: 0;
 	color: rgb(228, 229, 235);
