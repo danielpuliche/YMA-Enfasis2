@@ -79,7 +79,7 @@ include('../../settings/db.php');
                                 <?php
                                 for ($i = 0; $i < count($array_regimenes); $i++) {
                                 ?>
-                                    <option value="<?php echo $i ?>"><?php echo $array_regimenes[$i] ?></option>
+                                    <option value="<?php echo $array_regimenes[$i] ?>"><?php echo $array_regimenes[$i] ?></option>
                                 <?php
                                 }
                                 ?>
