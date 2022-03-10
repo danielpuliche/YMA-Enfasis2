@@ -43,7 +43,7 @@
                     </a>
                 </li>
                 
-               <!--  <li class="nav-item">
+                <li class="nav-item">
                     <a href="/views/solicitante/solicitarTramite.php" class="nav-link">
                         <i class="nav-icon"></i>
                         <p>Solicitar Trámite</p>
@@ -64,7 +64,7 @@
                     </a>
                 </li>
 
-                <li class="nav-item">
+                <!-- <li class="nav-item">
                     <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-ticket-alt"></i>
                         <p>

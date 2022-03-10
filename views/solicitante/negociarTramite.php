@@ -5,7 +5,7 @@ $GLOBALS['array_regimenes'] = [];
 $GLOBALS['array_especialidades'] = [];
 include("../../templates/header.php");
 include("../../templates/navbar.php");
-include("../../templates/menu.php");
+include("../../templates/menusolicitante.php");
 include('../../settings/db.php');
 // Validacion de la sesion
 ?>

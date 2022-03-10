@@ -4,7 +4,7 @@ $GLOBALS['mensaje'] = 'Solicitante';
 include("../../settings/sesiones.php");
 include("../../templates/header.php");
 include("../../templates/navbar.php");
-include("../../templates/menu.php");
+include("../../templates/menusolicitante.php");
 // Conexion a la base de datos
 include("../../settings/db.php");
 ?>
