@@ -116,11 +116,9 @@ if (isset($_POST['crear_medicamento'])) {
         $query = "INSERT INTO tramite_medicamentos(tramite_medicamentos_id, medicamentos, direccion_recogida, direccion_entrega, fecha_entrega) VALUES ('$tramite_id', '$medicamentos', '$direccion_recogida', '$direccion_entrega', '$fecha_entrega')";
         $result = $connection->query($query);
 
-        if (!$result) {
-            exit("Error");
-        } else {
-            //Con este comando retorna al login
-            header("Location: ../../views/solicitante/historialTramites.php");
+        if (!$resultado) {
+            header("Location: /views/solicitante/solicitanteMain.php?mensaje=1");
         }
+        header("Location: /views/solicitante/solicitanteMain.php?mensaje=2");
     }
 }

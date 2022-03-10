@@ -1,6 +1,6 @@
 <?php
 include("../../settings/sesiones.php");
-$GLOBALS['mensaje'] = 'Tramitador';
+$GLOBALS['mensaje'] = 'Solicitante';
 $GLOBALS['array_regimenes'] = [];
 $GLOBALS['array_especialidades'] = [];
 include("../../templates/header.php");
@@ -98,12 +98,10 @@ include('../../settings/db.php');
         <?php
         }
         ?>
-        <form class="p-4" method="POST" action="/settings/tramitador/controller.php">
+        <form class="p-4" method="POST" action="/settings/solicitante/controller.php">
             <div class="d-flex justify-content-around align-items-center">
-                <img src="../../static/img/down.png" id="down" width="100em" alt="">
                 <span id="val-min" style="display: none;"><?php echo $tramite['precio']; ?></span>
                 <input style="pointer-events:none; background-color: #f4f6f9; font-size: 6em; width: 3em; border: 0px solid; color:black;" type="number" name="precio" id="precio" value="<?php echo $tramite['precio']; ?>" min="<?php echo $tramite['precio']; ?>" readonly required>
-                <img src="../../static/img/up.png" id="up" width="100em" alt="">
             </div>
             <div class="form-row">
                 <div style="width:100%" class="d-flex justify-content-around align-items-center">
@@ -119,20 +117,6 @@ include('../../settings/db.php');
     <!-- /. Main content -->
 </div>
 <!-- /.content-wrapper -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script>
-    $(document).ready(() => {
-        $('#up').click(() => {
-            $('#precio').val(parseInt($('#precio').val()) + 500);
-        });
-        $('#down').click(() => {
-            let valMin = $('#val-min').html()
-            if (parseInt($('#precio').val()) > parseInt(valMin)) {
-                $('#precio').val(parseInt($('#precio').val()) - 500);
-            }
-        });
-    });
-</script>
 <?php
 include_once("../../templates/footer.php");
 ?>

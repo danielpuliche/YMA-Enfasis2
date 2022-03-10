@@ -1,12 +1,48 @@
 <?php
-    include("../../settings/sesiones.php");
-    $GLOBALS['mensaje'] = 'Solicitante';
-    include("../../templates/header.php");
-    include("../../templates/navbar.php");
-    include("../../templates/menu.php");
-    include('../../settings/db.php');
-    // Validacion de la sesion
+include("../../settings/sesiones.php");
+$GLOBALS['mensaje'] = 'Solicitante';
+include("../../templates/header.php");
+include("../../templates/navbar.php");
+include("../../templates/menu.php");
+include('../../settings/db.php');
+// Validacion de la sesion
 
+?>
+
+<?php
+if (isset($_GET['mensaje'])) {
+    if ($_GET['mensaje'] == 1) {
+?>
+        <script>
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Solicitud fallida!',
+            })
+        </script>
+    <?php
+    } elseif ($_GET['mensaje'] == 2) {
+    ?>
+        <script>
+            Swal.fire({
+                icon: 'success',
+                title: 'Éxito',
+                text: 'Solicitud realizada correctamente!',
+            })
+        </script>
+    <?php
+    } else {
+    ?>
+        <script>
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Datos no válidos!',
+            })
+        </script>
+<?php
+    }
+}
 ?>
 
 <!-- Content Wrapper. Contains page content -->
@@ -43,7 +79,7 @@
                 <!-- small box -->
                 <div class="small-box bg-info">
                     <div class="inner">
-                        <p>Trámites en proceso</p>
+                        <p>Mis trámites</p>
                     </div>
                     <a href="tramitesProceso.php" class="small-box-footer"><i class="fas fa-arrow-circle-right"></i></a>
                 </div>
