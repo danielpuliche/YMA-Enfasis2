@@ -60,7 +60,7 @@ if (isset($_POST['crear_cita'])) {
     $especialidad = $_POST['especialidad'];
     $fecha_disponible = $_POST['fecha_disponible'];
 
-    $query = "INSERT INTO tramite(solicitante_id, eps, regimen, precio, estado_tramite) VALUES ('$solicitante_id', '$eps', '$regimen', '$precio', '$estado_tramite')";
+    $query = "INSERT INTO tramite(solicitante_id, eps, regimen, precio, precio_ini, estado_tramite) VALUES ('$solicitante_id', '$eps', '$regimen', '$precio', '$precio', '$estado_tramite')";
 
     //Ejecuta la consulta
     $resultado = mysqli_query($connection, $query);
@@ -99,7 +99,7 @@ if (isset($_POST['crear_medicamento'])) {
     $direccion_entrega = $_POST['direccion_entrega'];
     $direccion_recogida = $_POST['direccion_recogida'];
 
-    $query = "INSERT INTO tramite(solicitante_id, eps, regimen, precio, estado_tramite) VALUES ('$solicitante_id', '$eps', '$regimen', '$precio', '$estado_tramite')";
+    $query = "INSERT INTO tramite(solicitante_id, eps, regimen, precio, precio_ini, estado_tramite) VALUES ('$solicitante_id', '$eps', '$regimen', '$precio', '$precio', '$estado_tramite')";
 
     //Ejecuta la consulta
     $resultado = mysqli_query($connection, $query);
@@ -144,7 +144,7 @@ if (isset($_POST['negociar'])) {
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
     echo $id;
-    $query = "UPDATE tramite t SET t.estado_tramite='Espera', t.tramitador_id=NULL WHERE t.tramite_id=$id";
+    $query = "UPDATE tramite t SET t.estado_tramite='Espera', t.tramitador_id=NULL, t.precio=t.precio_ini WHERE t.tramite_id=$id";
     $resultado = mysqli_query($connection, $query);
 
     if (!$resultado) {
