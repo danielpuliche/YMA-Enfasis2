@@ -122,3 +122,34 @@ if (isset($_POST['crear_medicamento'])) {
         header("Location: /views/solicitante/solicitanteMain.php?mensaje=2");
     }
 }
+
+// Controlador para la negociación
+if (isset($_POST['negociar'])) {
+
+    $tramite_id = $_POST['tramite_id'];
+    $query = "UPDATE tramite t SET t.estado_tramite='Proceso' WHERE t.tramite_id=$tramite_id";
+    //Ejecuta la consulta
+    echo $query;
+
+    try {
+        $resultado = mysqli_query($connection, $query);
+    } catch (Exception) {
+    }
+
+    if (!$resultado) {
+        header("Location: /views/solicitante/solicitanteMain.php?mensaje=4");
+    }
+    header("Location: /views/solicitante/solicitanteMain.php?mensaje=3");
+}
+
+// Controlador para rechazar 
+if (isset($_GET['id'])) {
+    $id = $_GET['id'];
+    $query = "UPDATE tramite t SET t.estado_tramite='Espera' WHERE t.tramite_id=$id";
+    $resultado = mysqli_query($connection, $query);
+
+    // if (!$resultado) {
+    //     header("Location: /views/solicitante/solicitanteMain.php?mensaje=6");
+    // }
+    // header("Location: /views/solicitante/solicitanteMain.php?mensaje=5");
+}

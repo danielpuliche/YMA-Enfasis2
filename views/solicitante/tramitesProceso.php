@@ -58,7 +58,7 @@ include("../../settings/db.php");
                                     $id = $_SESSION['usuario_id'];
                                     $sql = "SELECT t.tramite_id, t.eps, t.regimen, tm.especialidad, tm.fecha_disponible, t.precio, t.estado_tramite FROM tramite t
                                 INNER JOIN tramite_citamedica tm ON tm.tramite_citamedica_id=t.tramite_id
-                                WHERE t.solicitante_id=$id AND (t.estado_tramite='Negociacion' OR t.estado_tramite='Espera')";
+                                WHERE t.solicitante_id=$id AND (t.estado_tramite='Negociacion' OR t.estado_tramite='Espera' OR t.estado_tramite='Proceso')";
                                     $resultado = $conn->query($sql);
                                 } catch (Exception $e) {
                                     $error = $e->getMessage();
@@ -114,7 +114,6 @@ include("../../settings/db.php");
                         <table id="myTable1" class="table table-bordered table-striped">
                             <thead>
                                 <tr>
-                                    <th>Tramitador</th>
                                     <th>Eps</th>
                                     <th>Régimen</th>
                                     <th>Medicamentos</th>
@@ -122,6 +121,7 @@ include("../../settings/db.php");
                                     <th>Precio</th>
                                     <th>Documentos</th>
                                     <th>Estado</th>
+                                    <th>Opción</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -130,10 +130,9 @@ include("../../settings/db.php");
                                     $conn = mysqli_connect($host, $user, $pw, $db);
                                     $conn->set_charset("utf8");
                                     $id = $_SESSION['usuario_id'];
-                                    $sql = "SELECT u.nombres, u.apellidos, t.eps, t.regimen, tm.medicamentos, tm.fecha_entrega, t.precio, t.estado_tramite FROM tramite t
-                                INNER JOIN usuario u ON u.usuario_id=t.tramitador_id INNER JOIN tramitador tr ON tr.tramitador_id=t.tramitador_id
+                                    $sql = "SELECT t.tramite_id, t.eps, t.regimen, tm.medicamentos, tm.fecha_entrega, t.precio, t.estado_tramite FROM tramite t
                                 INNER JOIN tramite_medicamentos tm ON tm.tramite_medicamentos_id=t.tramite_id
-                                WHERE t.solicitante_id=$id AND t.estado_tramite='Finalizado'";
+                                WHERE t.solicitante_id=$id AND (t.estado_tramite='Negociacion' OR t.estado_tramite='Espera' OR t.estado_tramite='Proceso')";
                                     $resultado = $conn->query($sql);
                                 } catch (Exception $e) {
                                     $error = $e->getMessage();
@@ -142,7 +141,6 @@ include("../../settings/db.php");
                                 while ($tramite = $resultado->fetch_assoc()) { ?>
 
                                     <tr>
-                                        <td> <?php echo $tramite['nombres']; ?> <?php echo $tramite['apellidos']; ?> </td>
                                         <td> <?php echo $tramite['eps']; ?> </td>
                                         <td> <?php echo $tramite['regimen']; ?> </td>
                                         <td> <?php echo $tramite['medicamentos']; ?> </td>
@@ -150,13 +148,17 @@ include("../../settings/db.php");
                                         <td> <?php echo $tramite['precio']; ?> </td>
                                         <td> <a href="https://file-examples-com.github.io/uploads/2017/10/file-sample_150kB.pdf" target="_blank">Ver aquí</a> </td>
                                         <td> <?php echo $tramite['estado_tramite']; ?> </td>
+                                        <td>
+                                            <?php if ($tramite['estado_tramite'] == 'Negociacion') {
+                                                echo '<a href="negociarTramite.php?id=', $tramite['tramite_id'], '&tipo=1" class="btn bg-primary btn-flat margin rounded">Elegir</a>';
+                                            } ?>
+                                        </td>
                                     </tr>
 
                                 <?php } ?>
                             </tbody>
                             <tfoot></tfoot>
                             <tr>
-                                <th>Tramitador</th>
                                 <th>Eps</th>
                                 <th>Régimen</th>
                                 <th>Medicamentos</th>
@@ -164,6 +166,7 @@ include("../../settings/db.php");
                                 <th>Precio</th>
                                 <th>Documentos</th>
                                 <th>Estado</th>
+                                <th>Opción</th>
                             </tr>
                             </tfoot>
                         </table>

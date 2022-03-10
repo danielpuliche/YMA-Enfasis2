@@ -10,6 +10,9 @@ include('../../settings/db.php');
 // Validacion de la sesion
 ?>
 
+<!-- jQuery -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
@@ -106,15 +109,37 @@ include('../../settings/db.php');
             <div class="form-row">
                 <div style="width:100%" class="d-flex justify-content-around align-items-center">
                     <input type="hidden" name="negociar" value="1">
-                    <input type="hidden" name="tramitador_id" value="<?php echo $_SESSION['usuario_id']; ?>">
-                    <input type="hidden" name="tramite_id" value="<?php echo $id ?>">
+                    <input type="hidden" name="tramite_id" value="<?php echo $id;?>">
                     <input type="submit" class="btn btn-lg btn-success" value="Aceptar"></input>
-                    <a class="btn btn-lg btn-danger" href="tramitesProceso.php" role="button">Rechazar</a>
+                    <a class="btn btn-lg btn-danger btn-rechazar" data-id="<?php echo $id; ?>" href="#" role="button">
+                        <i data-id="<?php echo $id; ?>">Rechazar</i>
+                    </a>
                 </div>
             </div>
         </form>
     </section>
     <!-- /. Main content -->
+
+    <script>
+        $('.btn-rechazar').click((ev) => {
+            let event = $(ev.target);
+            let id = event.data('id');
+            Swal.fire({
+                title: '¿Estas seguro?',
+                text: "No podrás revertir la acción!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Si, borrar!'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    $(location).prop('href', `/settings/controller.php?id=${id}`)
+                }
+            });
+        });
+    </script>
+
 </div>
 <!-- /.content-wrapper -->
 <?php

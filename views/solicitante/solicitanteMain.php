@@ -31,6 +31,46 @@ if (isset($_GET['mensaje'])) {
             })
         </script>
     <?php
+    } elseif ($_GET['mensaje'] == 3) {
+    ?>
+        <script>
+            Swal.fire({
+                icon: 'success',
+                title: 'Éxito',
+                text: 'Proceso en marcha!',
+            })
+        </script>
+    <?php
+    } elseif ($_GET['mensaje'] == 4) {
+    ?>
+        <script>
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Proceso no pudo ser iniciado!',
+            })
+        </script>
+    <?php
+    } elseif ($_GET['mensaje'] == 5) {
+    ?>
+        <script>
+            Swal.fire({
+                icon: 'success',
+                title: 'Éxito',
+                text: 'Oferta rechazada!',
+            })
+        </script>
+    <?php
+    } elseif ($_GET['mensaje'] == 6) {
+    ?>
+        <script>
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'No se pudo rechazar la oferta!',
+            })
+        </script>
+    <?php
     } else {
     ?>
         <script>

@@ -88,7 +88,7 @@ DROP TABLE IF EXISTS `tramite`;
 CREATE TABLE `tramite` (
   `tramite_id` smallint(5) UNSIGNED NOT NULL,
   `solicitante_id` smallint(5) UNSIGNED NOT NULL,
-  `tramitador_id` smallint(5) UNSIGNED NOT NULL,
+  `tramitador_id` smallint(5) UNSIGNED,
   `eps` varchar(20) DEFAULT NULL,
   `regimen` enum('Contributivo','Subsidiado') DEFAULT NULL,
   `precio` double DEFAULT NULL,
