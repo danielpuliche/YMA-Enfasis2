@@ -50,9 +50,11 @@ if (isset($_POST['negociar'])) {
 
     $tramitador_id = $_POST['tramitador_id'];
     $tramite_id = $_POST['tramite_id'];
+    echo $tramite_id;
     $precio = $_POST['precio'];
-    $query = "UPDATE tramite t SET t.tramitador_id='$tramitador_id', t.precio='$precio', t.estado_tramite='Negociacion' WHERE t.tramite_id='$tramite_id'";
+    $query = "UPDATE tramite t SET t.tramitador_id=$tramitador_id, t.precio=$precio, t.estado_tramite='Negociacion' WHERE t.tramite_id=$tramite_id";
     //Ejecuta la consulta
+    echo $query;
 
     try {
         $resultado = mysqli_query($connection, $query);

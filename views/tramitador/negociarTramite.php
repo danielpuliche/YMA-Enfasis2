@@ -1,6 +1,6 @@
 <?php
 include("../../settings/sesiones.php");
-$GLOBALS['mensaje'] = 'Solicitante';
+$GLOBALS['mensaje'] = 'Tramitador';
 $GLOBALS['array_regimenes'] = [];
 $GLOBALS['array_especialidades'] = [];
 include("../../templates/header.php");
@@ -83,7 +83,7 @@ include('../../settings/db.php');
             <div class="d-flex justify-content-around align-items-center">
                 <img src="../../static/img/down.png" id="down" width="100em" alt="">
                 <span id="val-min" style="display: none;"><?php echo $tramite['precio']; ?></span>
-                <input style="font-size: 6em; width: 3em; border: 0px solid; color:black;" type="number" name="precio" id="precio" value="<?php echo $tramite['precio']; ?>" min="<?php echo $tramite['precio']; ?>" disabled required>
+                <input style="pointer-events:none; background-color: #f4f6f9; font-size: 6em; width: 3em; border: 0px solid; color:black;" type="number" name="precio" id="precio" value="<?php echo $tramite['precio']; ?>" min="<?php echo $tramite['precio']; ?>" readonly required>
                 <img src="../../static/img/up.png" id="up" width="100em" alt="">
             </div>
             <div class="form-row">

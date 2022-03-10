@@ -57,7 +57,7 @@ include("../../settings/db.php");
                                     $sql = "SELECT t.tramite_id, u.nombres, u.apellidos, s.telefono, s.direccion, t.eps, t.regimen, tm.especialidad, tm.fecha_disponible, t.precio, t.estado_tramite FROM tramite t
                                     INNER JOIN usuario u ON u.usuario_id=t.solicitante_id INNER JOIN solicitante s ON s.solicitante_id=t.solicitante_id
                                     INNER JOIN tramite_citamedica tm ON tm.tramite_citamedica_id=t.tramite_id
-                                    WHERE t.tramitador_id=$id AND (t.estado_tramite='Negociacion' OR t.estado_tramite='Proceso')";
+                                    WHERE (t.estado_tramite='Espera')";
                                     $resultado = $conn->query($sql);
                                 } catch (Exception $e) {
                                     $error = $e->getMessage();
@@ -131,7 +131,7 @@ include("../../settings/db.php");
                                 $sql = "SELECT t.tramite_id, tm.direccion_entrega, tm.direccion_recogida, u.nombres, u.apellidos, s.telefono, s.direccion, t.eps, t.regimen, tm.medicamentos, tm.fecha_entrega, t.precio, t.estado_tramite FROM tramite t
                                     INNER JOIN usuario u ON u.usuario_id=t.solicitante_id INNER JOIN solicitante s ON s.solicitante_id=t.solicitante_id
                                     INNER JOIN tramite_medicamentos tm ON tm.tramite_medicamentos_id=t.tramite_id
-                                    WHERE t.tramitador_id=$id AND (t.estado_tramite='Negociacion' OR t.estado_tramite='Proceso')";
+                                    WHERE (t.estado_tramite='Espera')";
                                 $resultado = $conn->query($sql);
                             } catch (Exception $e) {
                                 $error = $e->getMessage();
