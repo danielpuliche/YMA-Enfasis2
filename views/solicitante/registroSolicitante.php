@@ -34,7 +34,7 @@ if (isset($_GET['cerrar_sesion'])) {
     <style>
         body {
             height: 800px;
-            background-image: url("http://localhost/YMA-Enfasis2/static/img/Medico.jpg");
+            background-image: url("../../static/img/Medico.jpg");
             background-size: cover;
             background-size: 100rem;
             background-repeat: no-repeat;

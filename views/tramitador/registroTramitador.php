@@ -34,7 +34,7 @@ if (isset($_GET['cerrar_sesion'])) {
     <style>
         body {
             height: 800px;
-            background-image: url("http://localhost/YMA-Enfasis2/static/img/negocia.jpg");
+            background-image: url("../../static/img/negocia.jpg");
             background-size: cover;
             background-size: 100rem;
             background-repeat: no-repeat;
@@ -98,17 +98,17 @@ if (isset($_GET['cerrar_sesion'])) {
     <!-- Fin de alertas -->
 
     <div class="p-5">
-        </br></br></br></br></br></br>
+        </br></br>
     </div>
     <div class="login-box p-5" style="background-color:#FFFFFF;">
         <div class="login-logo">
-            <a href="#"><b><FONT SIZE=7 COLOR="black" WEIGHT="bold">YMA</FONT></strong></h1></b><br><FONT SIZE=4 COLOR="black" WEIGHT="bold">Your Medical Assistant</FONT></strong></h1></a>
+            <FONT SIZE=7 COLOR="black" WEIGHT="bold">YMA</FONT>
+            <p><FONT SIZE=4 COLOR="black" WEIGHT="bold">Your Medical Assistant</FONT></p>
         </div>
         <!-- /.login-logo -->
         <div class="card">
             <div class="card-body login-card-body login">
                 <p class="login-box-msg">Registrarse - Tramitador</p>
-                <br>
 
                 <form action="/settings/tramitador/controller.php" id="signup-tramitador" name="signup-tramitador" method="post">
 
