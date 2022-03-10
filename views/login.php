@@ -24,7 +24,7 @@
         <!-- /.login-logo what-->
         <div class="card">
             <div class="card-body login-card-body login">
-                <p class="login-box-msg">Yo no se</p>
+                <p class="login-box-msg">Inicio sesión</p>
 
                 <form action="../settings/controller.php" id="login" method="post">
 
