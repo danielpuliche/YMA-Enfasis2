@@ -90,7 +90,7 @@ if (isset($_GET['mensaje'])) {
                     <div class="inner">
                         <p>Seleccionar trámite</p>
                     </div>
-                    <a href="" class="small-box-footer"><i class="fas fa-arrow-circle-right"></i></a>
+                    <a href="seleccionarTramite.php" class="small-box-footer"><i class="fas fa-arrow-circle-right"></i></a>
                 </div>
             </div>
             <!-- ./col -->
