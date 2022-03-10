@@ -45,6 +45,25 @@ if (isset($_POST['signup_tramitador'])) {
     }
 }
 
+// Controlador para la negociación
+if (isset($_POST['negociar'])) {
+
+    $tramitador_id = $_POST['tramitador_id'];
+    $tramite_id = $_POST['tramite_id'];
+    $precio = $_POST['precio'];
+    $query = "UPDATE tramite t SET t.tramitador_id='$tramitador_id', t.precio='$precio', t.estado_tramite='Negociacion' WHERE t.tramite_id='$tramite_id'";
+    //Ejecuta la consulta
+    
+    try {
+        $resultado = mysqli_query($connection, $query);
+    } catch (Exception) {
+    }
+
+    if (!$resultado) {
+        header("Location: /views/tramitador/tramitadorMain.php?mensaje=1");
+    }
+    header("Location: /views/tramitador/tramitadorMain.php?mensaje=2");
+}
 
 // Controlador para editar film
 if (isset($_POST['edit-film'])) {
