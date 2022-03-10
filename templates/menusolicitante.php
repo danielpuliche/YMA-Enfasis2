@@ -53,7 +53,7 @@
                 <li class="nav-item">
                     <a href="/views/solicitante/tramitesProceso.php" class="nav-link">
                         <i class="nav-icon"></i>
-                        <p>Tramites en Proceso</p>
+                        <p>Mis trámites</p>
                     </a>
                 </li>
                 
