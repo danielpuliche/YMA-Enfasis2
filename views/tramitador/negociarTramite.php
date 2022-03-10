@@ -86,10 +86,11 @@ include('../../settings/db.php');
                 <input style="font-size: 6em; width: 3em; border: 0px solid; color:black;" type="number" name="precio" id="precio" value="<?php echo $tramite['precio']; ?>" min="<?php echo $tramite['precio']; ?>" disabled required>
                 <img src="../../static/img/up.png" id="up" width="100em" alt="">
             </div>
-
             <div class="form-row">
                 <div style="width:100%" class="d-flex justify-content-around align-items-center">
                     <input type="hidden" name="negociar" value="1">
+                    <input type="hidden" name="tramitador_id" value="<?php echo $_SESSION['usuario_id']; ?>">
+                    <input type="hidden" name="tramite_id" value="<?php echo $id ?>">
                     <input type="submit" class="btn btn-lg btn-success" value="Aceptar"></input>
                     <a class="btn btn-lg btn-danger" href="#" role="button">Rechazar</a>
                 </div>
