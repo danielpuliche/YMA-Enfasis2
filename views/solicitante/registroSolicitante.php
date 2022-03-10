@@ -1,6 +1,6 @@
 <?php
 session_start();
-if(isset($_GET['cerrar_sesion'])){
+if (isset($_GET['cerrar_sesion'])) {
     session_destroy();
 }
 ?>
@@ -13,6 +13,9 @@ if(isset($_GET['cerrar_sesion'])){
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Registro - YMA</title>
 
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/ico" href="https://iconarchive.com/download/i109565/cjdowner/cryptocurrency-flat/ICON-ICX.ico" />
+
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Bootstrap 4 -->
@@ -24,7 +27,10 @@ if(isset($_GET['cerrar_sesion'])){
 
     <!-- SweetAlert y Ajax -->
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    
+
+    <!-- Validar inputs -->
+    <script src="/static/js/validarInputs.js"></script>
+
 </head>
 
 <body class="hold-transition login-page">
@@ -33,7 +39,7 @@ if(isset($_GET['cerrar_sesion'])){
 
     <?php
     if (isset($_GET['mensaje'])) {
-        if($_GET['mensaje']==1){
+        if ($_GET['mensaje'] == 1) {
     ?>
             <script>
                 Swal.fire({
@@ -42,9 +48,9 @@ if(isset($_GET['cerrar_sesion'])){
                     text: 'Correo ya registrado!',
                 })
             </script>
-    <?php
-        }elseif($_GET['mensaje']==2){
-    ?>
+        <?php
+        } elseif ($_GET['mensaje'] == 2) {
+        ?>
             <script>
                 Swal.fire({
                     icon: 'error',
@@ -52,18 +58,28 @@ if(isset($_GET['cerrar_sesion'])){
                     text: 'Error al registrar solicitante!',
                 })
             </script>
-    <?php
-        }else{
-    ?>        
-    <script>
+        <?php
+        } elseif ($_GET['mensaje'] == 3) {
+        ?>
+            <script>
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Contraseñas no coinciden!',
+                })
+            </script>
+        <?php
+        } else {
+        ?>
+            <script>
                 Swal.fire({
                     icon: 'error',
                     title: 'Oops...',
                     text: 'Error 2!',
                 })
             </script>
-    <?php      
-        }          
+    <?php
+        }
     }
     ?>
 
@@ -82,7 +98,7 @@ if(isset($_GET['cerrar_sesion'])){
                 <form action="/settings/solicitante/controller.php" id="signup-solicitante" method="post">
 
                     <div class="input-group mb-3">
-                        <input type="text" class="form-control" name="names" placeholder="Nombres" required>
+                        <input type="text" class="form-control" name="names" placeholder="Nombres" onkeyup="this.value=ValChar(this.value)" required>
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas"></span>
@@ -91,7 +107,7 @@ if(isset($_GET['cerrar_sesion'])){
                     </div>
 
                     <div class="input-group mb-3">
-                        <input type="text" class="form-control" name="lastnames" placeholder="Apellidos" required>
+                        <input type="text" class="form-control" name="lastnames" placeholder="Apellidos" onkeyup="this.value=ValChar(this.value)" required>
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas"></span>
@@ -100,7 +116,7 @@ if(isset($_GET['cerrar_sesion'])){
                     </div>
 
                     <div class="input-group mb-3">
-                        <input type="number" class="form-control" name="identificacion" placeholder="Identificación" required>
+                        <input type="number" class="form-control" name="identificacion" placeholder="Identificación" onkeyup="this.value=ValChar(this.value)" required>
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas"></span>
@@ -109,7 +125,7 @@ if(isset($_GET['cerrar_sesion'])){
                     </div>
 
                     <div class="input-group mb-3">
-                        <input type="number" class="form-control" name="phone" placeholder="Telefono" required>
+                        <input type="number" class="form-control" name="phone" placeholder="Telefono" onkeyup="this.value=ValChar(this.value)" required>
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas"></span>
@@ -118,7 +134,7 @@ if(isset($_GET['cerrar_sesion'])){
                     </div>
 
                     <div class="input-group mb-3">
-                        <input type="text" class="form-control" name="address" placeholder="Direccion" required>
+                        <input type="text" class="form-control" name="address" placeholder="Direccion" onkeyup="this.value=ValChar(this.value)" required>
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas"></span>
@@ -127,7 +143,7 @@ if(isset($_GET['cerrar_sesion'])){
                     </div>
 
                     <div class="input-group mb-3">
-                        <input type="email" class="form-control" name="email" placeholder="Correo" required>
+                        <input type="email" class="form-control" name="email" placeholder="Correo" onkeyup="this.value=ValChar(this.value)" required>
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas fa-envelope"></span>
@@ -136,7 +152,7 @@ if(isset($_GET['cerrar_sesion'])){
                     </div>
 
                     <div class="input-group mb-3">
-                        <input type="password" class="form-control" name="password" placeholder="Contraseña" required>
+                        <input type="password" class="form-control" name="password" placeholder="Contraseña" onkeyup="this.value=ValChar(this.value)" required>
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas fa-lock"></span>
@@ -145,7 +161,7 @@ if(isset($_GET['cerrar_sesion'])){
                     </div>
 
                     <div class="input-group mb-3">
-                        <input type="password" class="form-control" name="password2" placeholder=" Repetir contraseña" required>
+                        <input type="password" class="form-control" name="password2" placeholder=" Repetir contraseña" onkeyup="this.value=ValChar(this.value)" required>
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas fa-lock"></span>

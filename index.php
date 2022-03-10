@@ -8,6 +8,8 @@ if (isset($_GET['cerrar_sesion'])) {
 <html lang="en">
 
 <head>
+   <!-- Favicon -->
+	<link rel="shortcut icon" type="image/ico" href="https://iconarchive.com/download/i109565/cjdowner/cryptocurrency-flat/ICON-ICX.ico"/>
    <!-- basic -->
    <meta charset="utf-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,7 +17,7 @@ if (isset($_GET['cerrar_sesion'])) {
    <meta name="viewport" content="width=device-width, initial-scale=1">
    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
    <!-- site metas -->
-   <title>YMA</title>
+   <title>YMA - Your Medical Assistant</title>
    <!-- bootstrap css -->
    <link rel="stylesheet" href="./static/css/bootstrap.min.css">
    <!-- style css -->
