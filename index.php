@@ -228,7 +228,7 @@ if (isset($_GET['cerrar_sesion'])) {
    <!-- end abouts -->
 
    <!-- about  --> 
-   <div id="about" class="center" >
+   <div id="about" class="center  bg-danger" >
       <div class="container-fluid">
          <div class="row-xl-10 py-5">
             <div class="col-md-12">
@@ -259,7 +259,7 @@ if (isset($_GET['cerrar_sesion'])) {
 
    <!-- end abouts -->
 
-      <a type="button" class="text-center pt-3" href="#" style="background-color:#484295; min-height: 8vh; width: 100%; color:#FFFFFF;  vertical-align: middle; justify-content: center;">Inicio Página</a>
+      <a type="button" class="text-center" href="#" style="background-color:#484295; min-height: 8vh; width: 100%; color:#FFFFFF;  vertical-align: middle; justify-content: center;">Inicio Página</a>
 
    <!-- about  -->
    <div class="bg">
@@ -273,6 +273,7 @@ if (isset($_GET['cerrar_sesion'])) {
                   <li>Tercer elemento de la lista</li>
                </ol>
             </div>
+            <div class="col-1"></div>
             <div class="col-3 px-5" style="color:#FFFFFF;">
                <ol>
                   <li><strong>Gana Dinero con Nosotros</strong></li>
@@ -290,15 +291,13 @@ if (isset($_GET['cerrar_sesion'])) {
                   <li>Tercer elemento de la lista</li>
                </ol>
             </div>
-            <div class="col-1"></div>
-            <div class="col-2" style="color:#FFFFFF;">
+            <div class="col-3 px-5" style="color:#FFFFFF;">
             <ol>
                   <li><strong>Podemos Ayudarte</strong></li>
                   <li>Segundo elemento de la lista</li>
                   <li>Tercer elemento de la lista</li>
                </ol>
             </div>
-            <div class="col-1"></div>
          </div>
       </div>
    </div>
