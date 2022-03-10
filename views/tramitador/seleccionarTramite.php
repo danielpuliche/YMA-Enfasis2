@@ -45,6 +45,7 @@ include("../../settings/db.php");
                                     <th>Especialidad</th>
                                     <th>Fecha disponible</th>
                                     <th>Precio</th>
+                                    <th>Seleccionar</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -71,6 +72,12 @@ include("../../settings/db.php");
                                         <td> <?php echo $tramite['especialidad']; ?> </td>
                                         <td> <?php echo $tramite['fecha_disponible']; ?> </td>
                                         <td> <?php echo $tramite['precio']; ?> </td>
+                                        <td>
+                                            <!-- <a href="edit.php?id=<?php echo $tramite['tramite_id']; ?>" class="btn bg-primary btn-flat margin rounded">
+                                                Elegir
+                                            </a> -->
+                                            
+                                        </td>
                                     </tr>
 
                                 <?php } ?>
@@ -83,6 +90,7 @@ include("../../settings/db.php");
                                 <th>Especialidad</th>
                                 <th>Fecha disponible</th>
                                 <th>Precio</th>
+                                <th>Seleccionar</th>
                             </tr>
                             </tfoot>
                         </table>
